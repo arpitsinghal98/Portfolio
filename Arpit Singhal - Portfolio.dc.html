@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Arpit Singhal — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #100f0c; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  ::selection { background: #c8471c; color: #f0eee6; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; }
+  button:focus-visible { outline: 2px solid #c8471c; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+</helmet>
+
+<div style="background: #f0eee6; color: #141310; font-family: 'Schibsted Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased;">
+
+<div style="position: fixed; top: 0; left: 0; height: 2px; width: {{ progress }}; background: #c8471c; z-index: 90;"></div>
+
+<div style="position: relative; height: 100vh; min-height: 640px; background: #100f0c; color: #f0eee6; overflow: hidden;">
+  <div style="position: absolute; inset: 0 0 38% 0; overflow: hidden;">
+    <image-slot id="hero-bg" shape="rect" fit="cover" style="color: #f0eee6" placeholder="Drop a wide product shot here"></image-slot>
+  </div>
+  <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(16,15,12,0.66) 0%, rgba(16,15,12,0.12) 30%, rgba(16,15,12,0.72) 58%, #100f0c 68%, #100f0c 100%);"></div>
+
+  <div style="position: absolute; top: 0; left: 0; right: 0; pointer-events: none; display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 26px 30px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;">
+    <span>Arpit Singhal</span>
+    <span style="opacity: 0.8;">Software Engineer · SF Bay Area</span>
+    <span style="color: #ff7a4d;">Open to work</span>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; pointer-events: none; padding: 0 30px 34px;">
+    <div style="max-width: 1560px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px;">
+      <h1 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(50px, 8.4vw, 144px); line-height: 0.88; letter-spacing: -0.03em; max-width: 15ch; text-shadow: 0 2px 40px rgba(16,15,12,0.5);">I build the parts <span style="font-style: italic; color: #ff7a4d;">underneath</span> the feature.</h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px 60px; align-items: flex-end; border-top: 1px solid rgba(240,238,230,0.3); padding-top: 20px;">
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; max-width: 46ch; opacity: 0.92;">Founding engineer at TwinMind — AI memory for 400,000 people. Before that: eighteen enterprise systems in sync, and a regulated pharma platform that could not go down.</p>
+        <span style="flex: 1;"></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7;">Scroll ↓</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 110px 30px 90px;">
+  <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 56px; align-items: start;">
+    <div style="width: 180px; height: 180px; overflow: hidden;">
+      <image-slot id="headshot" shape="rounded" radius="4" fit="cover" placeholder="Headshot"></image-slot>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 26px;">
+      <p style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 3vw, 46px); line-height: 1.2; letter-spacing: -0.015em; max-width: 26ch;">Nobody asks for APIs, state, sync, or release quality. Everybody notices the day they're wrong.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px; max-width: 1000px;">
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a463d;">I do my best work on small teams where the problem is real and the requirements aren't settled. Lately that's meant memory systems — products that shouldn't meet you for the first time every time.</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a463d;">Looking for founding, product, and forward-deployed engineering roles. Backend systems, API design, data pipelines, reliability, performance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background: #141310; color: #f0eee6; padding: 34px 30px;">
+  <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 30px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(38px, 4.4vw, 62px); line-height: 1;">400k</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;">people on the product</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(38px, 4.4vw, 62px); line-height: 1;">80%</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;">lower transcription cost</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(38px, 4.4vw, 62px); line-height: 1;">30%</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;">fewer chat failures</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(38px, 4.4vw, 62px); line-height: 1;">18</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;">systems kept in sync</span>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 120px 30px 0;">
+  <div style="max-width: 1560px; margin: 0 auto; display: flex; align-items: baseline; gap: 20px; padding-bottom: 10px;">
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #6b6659;">Selected work</span>
+    <span style="flex: 1; height: 1px; background: #d5d0c1;"></span>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #6b6659;">01 — 04</span>
+  </div>
+</div>
+
+<div style="padding: 60px 30px 0;">
+  <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 60px; align-items: start;">
+    <div style="position: sticky; top: 60px; display: flex; flex-direction: column; gap: 22px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #c8471c;">01 / Half-Life</span>
+      <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(42px, 5.2vw, 88px); line-height: 0.92; letter-spacing: -0.03em;">Argue with the axis, not the black box.</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #35322b; max-width: 42ch;">Describe your work week. Claude breaks it into twelve to twenty-two tasks, scores each on six axes, and the tool returns your automation exposure and the month it crosses half.</p>
+      <div style="display: flex; gap: 12px; align-items: flex-start; max-width: 46ch; padding: 16px 18px; background: #e6e3d8;">
+        <span style="color: #c8471c; font-family: 'JetBrains Mono', monospace; font-size: 13px;">└</span>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.65; color: #4a463d;">The model only supplies qualitative sub-scores. Every number is computed by forty lines of deterministic code — so the result is arguable instead of oracular.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">Node 20</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">Express</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">Anthropic SDK</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">SSE streaming</span>
+      </div>
+      <a href="#" style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.06em; border-bottom: 1px solid #c8471c; align-self: flex-start; padding-bottom: 2px; color: #c8471c;">Open live demo ↗</a>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="aspect-ratio: 16 / 10; background: #e6e3d8; overflow: hidden;">
+        <image-slot id="hl-1" shape="rect" fit="cover" placeholder="Half-Life — the scored task ledger, streaming in"></image-slot>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px;">
+        <div style="aspect-ratio: 4 / 3; background: #e6e3d8; overflow: hidden;">
+          <image-slot id="hl-2" shape="rect" fit="cover" placeholder="Exposure % + half-life result"></image-slot>
+        </div>
+        <div style="aspect-ratio: 4 / 3; background: #e6e3d8; overflow: hidden;">
+          <image-slot id="hl-3" shape="rect" fit="cover" placeholder="Leaderboard or handoff prompts"></image-slot>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 130px 30px 0;">
+  <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 96px; align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="aspect-ratio: 16 / 10; background: #e6e3d8; overflow: hidden;">
+        <image-slot id="pt-1" shape="rect" fit="cover" placeholder="PaperTrail — grounded answer with citations"></image-slot>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px;">
+        <div style="aspect-ratio: 4 / 3; background: #e6e3d8; overflow: hidden;">
+          <image-slot id="pt-2" shape="rect" fit="cover" placeholder="Ingestion / job runner view"></image-slot>
+        </div>
+        <div style="aspect-ratio: 4 / 3; background: #e6e3d8; overflow: hidden;">
+          <image-slot id="pt-3" shape="rect" fit="cover" placeholder="Architecture diagram"></image-slot>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: sticky; top: 60px; display: flex; flex-direction: column; gap: 22px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #c8471c;">02 / PaperTrail</span>
+      <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(42px, 5.2vw, 88px); line-height: 0.92; letter-spacing: -0.03em;">One deployable, not two.</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #35322b; max-width: 42ch;">Research answers built from PubMed, arXiv, and your own uploads — streamed as grounded Markdown where every claim traces back to a source you can open.</p>
+      <div style="display: flex; gap: 12px; align-items: flex-start; max-width: 46ch; padding: 16px 18px; background: #e6e3d8;">
+        <span style="color: #c8471c; font-family: 'JetBrains Mono', monospace; font-size: 13px;">└</span>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.65; color: #4a463d;">The job runner lives inside the app instead of as a separate worker: ingestion, chunking, embedding, and hybrid retrieval in one container that still scales out.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">Next.js</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">pgvector</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">Qdrant</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">Redis</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border: 1px solid #d5d0c1; color: #4a463d;">MinIO</span>
+      </div>
+      <a href="#" style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.06em; border-bottom: 1px solid #c8471c; align-self: flex-start; padding-bottom: 2px; color: #c8471c;">Open live demo ↗</a>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 130px 30px 120px;">
+  <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px;">
+    <a href="https://mail-iq-jump.vercel.app" style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="aspect-ratio: 3 / 2; background: #e6e3d8; overflow: hidden;">
+        <image-slot id="mi-1" shape="rect" fit="cover" placeholder="MailIQ — three-panel inbox"></image-slot>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: baseline; gap: 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #c8471c;">03</span>
+          <h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -0.02em;">MailIQ</h3>
+          <span style="flex: 1;"></span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6b6659;">Live ↗</span>
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4a463d; max-width: 46ch;">Gmail made bulk-operable. Built on an API that fails often, so the test layer is the product — Jest, Playwright, and MSW cover the failure paths.</p>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b6659;">Remix · Gmail API · Neon Postgres · Gemini</span>
+      </div>
+    </a>
+
+    <a href="https://whispr-beta.vercel.app" style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="aspect-ratio: 3 / 2; background: #e6e3d8; overflow: hidden;">
+        <image-slot id="wp-1" shape="rect" fit="cover" placeholder="Whispr — live transcript + memory bank"></image-slot>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: baseline; gap: 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #c8471c;">04</span>
+          <h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -0.02em;">Whispr</h3>
+          <span style="flex: 1;"></span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6b6659;">Live ↗</span>
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4a463d; max-width: 46ch;">Live meeting transcription with a memory bank you can question afterwards — built in a weekend, and the first draft of what I now work on full time.</p>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b6659;">Remix · Firebase · Google Generative AI</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div style="background: #141310; color: #f0eee6; padding: 110px 30px;">
+  <div style="max-width: 1560px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; align-items: baseline; gap: 20px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55;">Seven years</span>
+      <span style="flex: 1; height: 1px; background: rgba(240,238,230,0.22);"></span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ff7a4d;">{{ traceCaption }}</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 8px 18px; align-items: center;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5;">years</span>
+      <div style="position: relative; height: 14px; border-bottom: 1px solid rgba(240,238,230,0.22);">
+        <sc-for list="{{ ticks }}" as="t" hint-placeholder-count="7">
+          <span style="position: absolute; bottom: 2px; left: {{ t.left }}; font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: 0.5; transform: translateX(-50%);">{{ t.label }}</span>
+        </sc-for>
+      </div>
+
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; padding-top: 8px; align-self: start;">roles</span>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <sc-for list="{{ workSpans }}" as="s" hint-placeholder-count="5">
+          <button onClick="{{ s.pick }}" style="position: relative; display: block; width: 100%; height: 28px; background: transparent; border: 0; padding: 0; cursor: pointer; text-align: left;">
+            <sc-if value="{{ s.off }}" hint-placeholder-val="{{ true }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: rgba(240,238,230,0.16);"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: rgba(240,238,230,0.62);">{{ s.name }}</span>
+            </sc-if>
+            <sc-if value="{{ s.onIn }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: #ff7a4d;"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: #141310;">{{ s.name }}</span>
+            </sc-if>
+            <sc-if value="{{ s.onOut }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: #ff7a4d;"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: #ff7a4d;">{{ s.name }}</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; padding-top: 8px; align-self: start;">studied</span>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <sc-for list="{{ studySpans }}" as="s" hint-placeholder-count="1">
+          <button onClick="{{ s.pick }}" style="position: relative; display: block; width: 100%; height: 28px; background: transparent; border: 0; padding: 0; cursor: pointer; text-align: left;">
+            <sc-if value="{{ s.off }}" hint-placeholder-val="{{ true }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: rgba(240,238,230,0.08); border: 1px dashed rgba(240,238,230,0.3);"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: rgba(240,238,230,0.62);">{{ s.name }}</span>
+            </sc-if>
+            <sc-if value="{{ s.onIn }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: #ff7a4d;"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: #141310;">{{ s.name }}</span>
+            </sc-if>
+            <sc-if value="{{ s.onOut }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: #ff7a4d;"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: #ff7a4d;">{{ s.name }}</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; padding-top: 8px; align-self: start;">built</span>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <sc-for list="{{ buildSpans }}" as="s" hint-placeholder-count="5">
+          <button onClick="{{ s.pick }}" style="position: relative; display: block; width: 100%; height: 28px; background: transparent; border: 0; padding: 0; cursor: pointer; text-align: left;">
+            <sc-if value="{{ s.off }}" hint-placeholder-val="{{ true }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: rgba(240,238,230,0.16);"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: rgba(240,238,230,0.62);">{{ s.name }}</span>
+            </sc-if>
+            <sc-if value="{{ s.onIn }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: #ff7a4d;"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: #141310;">{{ s.name }}</span>
+            </sc-if>
+            <sc-if value="{{ s.onOut }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: 0; bottom: 0; left: {{ s.left }}; width: {{ s.width }}; background: #ff7a4d;"></span>
+              <span style="position: absolute; top: 6px; left: {{ s.labelLeft }}; transform: {{ s.labelShift }}; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; white-space: nowrap; color: #ff7a4d;">{{ s.name }}</span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <p style="margin: 0; font-size: 15px; line-height: 1.7; max-width: 74ch; opacity: 0.82;">{{ traceDetail }}</p>
+  </div>
+</div>
+
+<div style="padding: 110px 30px;">
+  <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 44px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6659;">Stack</span>
+      <span style="font-size: 15.5px; line-height: 1.7; color: #35322b;">TypeScript · Python · Node · React · Postgres · Redis · AWS · Docker · pgvector</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6659;">Study</span>
+      <span style="font-size: 15.5px; line-height: 1.7; color: #35322b;">MS Computer Science, Illinois Tech — 4.00<br />Nine Salesforce &amp; Copado certifications</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6659;">Off the clock</span>
+      <span style="font-size: 15.5px; line-height: 1.7; color: #35322b;">New to pickleball. Currently trying to survive in the swimming pool.</span>
+    </div>
+  </div>
+</div>
+
+<div style="background: #100f0c; color: #f0eee6; padding: 130px 30px 50px;">
+  <div style="max-width: 1560px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px;">
+    <a href="mailto:arpitsinghal98@outlook.com" style="display: block;">
+      <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(54px, 12vw, 208px); line-height: 0.86; letter-spacing: -0.035em; transition: color 240ms ease;" style-hover="color: #ff7a4d;">Let's talk.</h2>
+    </a>
+    <div style="display: flex; flex-wrap: wrap; gap: 26px 52px; align-items: baseline; border-top: 1px solid rgba(240,238,230,0.22); padding-top: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px;">
+      <a href="mailto:arpitsinghal98@outlook.com" style-hover="color: #ff7a4d;">arpitsinghal98@outlook.com</a>
+      <a href="https://github.com/arpitsinghal98" style-hover="color: #ff7a4d;">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/arpitsinghal98" style-hover="color: #ff7a4d;">LinkedIn ↗</a>
+      <a href="#" style-hover="color: #ff7a4d;">Résumé ↗</a>
+      <span style="flex: 1;"></span>
+      <span style="letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.45;">San Francisco Bay Area</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+const T0 = 2019 + 6 / 12;
+const T1 = 2026 + 8 / 12;
+const SPAN = T1 - T0;
+const m = (y, mo) => y + (mo - 1) / 12;
+
+const WORK = [
+  { id: 'abbvie', name: 'AbbVie', a: m(2019, 7), b: m(2022, 1) },
+  { id: 'vmware', name: 'VMware', a: m(2022, 1), b: m(2022, 12) },
+  { id: 'onebit', name: 'ONEBIT', a: m(2025, 2), b: m(2025, 6) },
+  { id: 'radical', name: 'Radical Squares', a: m(2025, 6), b: m(2025, 8) },
+  { id: 'twinmind', name: 'TwinMind', a: m(2025, 8), b: T1 }
+];
+const STUDY = [
+  { id: 'school', name: 'Illinois Tech — MS CS', a: m(2023, 1), b: m(2024, 12) }
+];
+const BUILT = [
+  { id: 'fanfave', name: 'FanFave', a: m(2024, 3), b: m(2024, 6) },
+  { id: 'mailiq', name: 'MailIQ', a: m(2024, 12), b: m(2025, 3) },
+  { id: 'whispr', name: 'Whispr', a: m(2025, 3), b: m(2025, 5) },
+  { id: 'papertrail', name: 'PaperTrail', a: m(2025, 9), b: m(2026, 3) },
+  { id: 'halflife', name: 'Half-Life', a: m(2026, 6), b: m(2026, 8) }
+];
+
+const DETAIL = {
+  twinmind: 'TwinMind, Aug 2025 — now. Founding engineer. Chat infrastructure joining five context sources; voice activity detection ahead of transcription that cut STT-driven LLM cost by 80%; a correction loop on AI summaries; subscriptions, paywall experiments, and the event tracking the roadmap is argued from.',
+  radical: 'Radical Squares, Jun — Aug 2025. Founding product engineer on a stealth data-lifecycle platform: LangChain orchestration routing schema, source detail, and transformation intent between agents, plus Azure deploys and Redis caching.',
+  onebit: 'ONEBIT, Feb — Jun 2025. Moved a live financial product from GCP to AWS — DNS cutover, database migration, static assets, SSL — then automated the release path behind it.',
+  vmware: 'VMware, 2022. Eighteen enterprise applications kept in sync through platform events, Apex triggers, subscriber logic, and batch processing; supported the master-data migration to Dun & Bradstreet.',
+  abbvie: 'AbbVie, Jul 2019 — Jan 2022. Medical information platform in a regulated environment: inquiry intake, case routing, Tier-3 production support under SLA, data-integrity investigations, bulk migrations.',
+  school: 'Illinois Institute of Technology, 2023 — 2024. MS Computer Science, 4.00 GPA. Co-lead of the Google Developer Group.',
+  halflife: 'Half-Life, Jul 2026. Built for the Claude Impact Lab: a described week decomposed into 12–22 tasks, scored on six axes, streamed over SSE, with the arithmetic kept in auditable code.',
+  papertrail: 'PaperTrail, 2025 — 2026. Hybrid dense and sparse retrieval across PubMed, arXiv, and user uploads, with exports to PDF, Markdown, CSV, and ZIP.',
+  mailiq: 'MailIQ, 2025. Real-time Gmail sync, custom categorization, bulk triage, OAuth2 throughout, tested against the failure paths rather than the happy one.',
+  whispr: 'Whispr, 2025. Weekend hackathon with Karan Savaliya and Pushkar Patil: live transcription, summaries, action items, and a meeting memory bank.',
+  fanfave: 'FanFave, Apr 2024. Sports event recommendations from profile, location, and search history, ranked generatively over Elasticsearch. Built with Kishan Patel.'
+};
+
+const CAPTION = {
+  twinmind: 'TwinMind', radical: 'Radical Squares', onebit: 'ONEBIT', vmware: 'VMware',
+  abbvie: 'AbbVie', school: 'Illinois Tech', halflife: 'Half-Life', papertrail: 'PaperTrail',
+  mailiq: 'MailIQ', whispr: 'Whispr', fanfave: 'FanFave'
+};
+
+const pct = v => Math.max(0, Math.min(100, v)).toFixed(2) + '%';
+
+class Component extends DCLogic {
+  state = { sel: 'twinmind', progress: '0%' };
+
+  constructor(props) {
+    super(props);
+    this.pickers = {};
+    WORK.concat(STUDY, BUILT).forEach(s => { this.pickers[s.id] = () => this.setState({ sel: s.id }); });
+  }
+
+  componentDidMount() {
+    this.tick = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      this.setState({ progress: pct(max > 0 ? (h.scrollTop / max) * 100 : 0) });
+    };
+    window.addEventListener('scroll', this.tick, { passive: true });
+    this.tick();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.tick);
+  }
+
+  shape(s) {
+    const on = this.state.sel === s.id;
+    const left = ((s.a - T0) / SPAN) * 100;
+    const width = ((s.b - s.a) / SPAN) * 100;
+    const labelPct = (s.name.length * 7.2 / 860) * 100;
+    const flip = left + labelPct > 99;
+    return {
+      name: s.name,
+      left: pct(left),
+      width: pct(width),
+      labelLeft: flip ? 'calc(' + pct(left) + ' - 10px)' : 'calc(' + pct(left) + ' + 10px)',
+      labelShift: flip ? 'translateX(-100%)' : 'none',
+      off: !on,
+      onIn: on && !flip,
+      onOut: on && flip,
+      pick: this.pickers[s.id]
+    };
+  }
+
+  renderVals() {
+    const ticks = [];
+    for (let y = 2020; y <= 2026; y++) ticks.push({ label: "'" + String(y).slice(2), left: pct(((y - T0) / SPAN) * 100) });
+    return {
+      ticks: ticks,
+      workSpans: WORK.map(s => this.shape(s)),
+      studySpans: STUDY.map(s => this.shape(s)),
+      buildSpans: BUILT.map(s => this.shape(s)),
+      traceCaption: CAPTION[this.state.sel] || '',
+      traceDetail: DETAIL[this.state.sel] || '',
+      progress: this.state.progress
+    };
+  }
+}
+
+</script>
+</body>
+</html>

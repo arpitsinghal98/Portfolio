@@ -11,12 +11,24 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const navigation = [
-  { href: "/work", label: "Work" },
-  { href: "/writing", label: "Writing" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#about", label: "About" },
-  { href: "/resume", label: "Resume" },
+const navigation = [{ href: "#work", label: "Work" }];
+
+const halfLifeFlow = [
+  "Work week",
+  "Task decomposition",
+  "6-axis judgment",
+  "Deterministic scoring",
+  "Exposure + half-life",
+  "Action plan",
+];
+
+const paperTrailFlow = [
+  "Sources",
+  "Parse + chunk",
+  "Embed + index",
+  "Dense + sparse",
+  "Grounded answer",
+  "Citations + exports",
 ];
 
 export default function Home() {
@@ -60,7 +72,7 @@ export default function Home() {
               variant="ghost"
               className="h-9 rounded-none border border-accent/60 px-4 font-mono text-[0.68rem] tracking-[0.12em] text-accent uppercase hover:bg-accent hover:text-accent-foreground"
             >
-              <Link href="/#ask">✦ Ask</Link>
+              <a href="mailto:arpitsinghal98@outlook.com">Contact</a>
             </Button>
           </nav>
 
@@ -111,7 +123,7 @@ export default function Home() {
                       asChild
                       className="h-12 w-full rounded-none bg-accent font-mono text-xs tracking-[0.12em] text-accent-foreground uppercase hover:bg-accent/90"
                     >
-                      <Link href="/#ask">✦ Ask my portfolio</Link>
+                      <a href="mailto:arpitsinghal98@outlook.com">Contact me</a>
                     </Button>
                   </SheetClose>
                 </div>
@@ -186,9 +198,9 @@ export default function Home() {
                     asChild
                     className="h-11 rounded-none bg-accent px-5 font-mono text-[0.68rem] tracking-[0.11em] text-accent-foreground uppercase hover:bg-accent/90"
                   >
-                    <Link href="/work">
+                    <Link href="#work">
                       Explore my work
-                      <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
+                      <ArrowDown aria-hidden="true" data-icon="inline-end" />
                     </Link>
                   </Button>
                   <Button
@@ -196,7 +208,7 @@ export default function Home() {
                     variant="outline"
                     className="h-11 rounded-none border-border bg-transparent px-5 font-mono text-[0.68rem] tracking-[0.11em] text-foreground uppercase hover:bg-secondary"
                   >
-                    <Link href="/#ask">✦ Ask my portfolio</Link>
+                    <a href="mailto:arpitsinghal98@outlook.com">Email me</a>
                   </Button>
                 </div>
               </div>
@@ -228,7 +240,7 @@ export default function Home() {
                   <ArrowUpRight aria-hidden="true" className="size-3.5" />
                 </a>
                 <Link
-                  href="/work"
+                  href="#work"
                   aria-label="Scroll to selected work"
                   className="ml-auto inline-flex items-center gap-2 font-mono text-[0.62rem] tracking-[0.12em] text-muted-foreground uppercase transition-colors hover:text-foreground md:ml-2"
                 >
@@ -236,6 +248,198 @@ export default function Home() {
                   <ArrowDown aria-hidden="true" className="size-3.5" />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="work"
+          aria-labelledby="work-heading"
+          className="scroll-mt-[4.5rem] bg-background text-foreground"
+        >
+          <div className="mx-auto max-w-[97.5rem] px-5 py-20 sm:px-8 sm:py-28 lg:py-36">
+            <header className="grid gap-8 border-t border-foreground pt-6 lg:grid-cols-[minmax(0,1fr)_32rem] lg:gap-16">
+              <div>
+                <p className="font-mono text-[0.65rem] tracking-[0.15em] text-accent uppercase">
+                  01 · Selected work
+                </p>
+                <h2
+                  id="work-heading"
+                  className="mt-5 max-w-[8ch] text-[clamp(4rem,8vw,8rem)] leading-[0.87] tracking-[-0.045em]"
+                >
+                  Systems with a point of view.
+                </h2>
+              </div>
+              <p className="self-end text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">
+                Two AI products built around a deliberate boundary: models
+                handle interpretation, while the surrounding system makes
+                results useful, grounded, and inspectable.
+              </p>
+            </header>
+
+            <div className="mt-20 space-y-28 sm:mt-28 sm:space-y-36">
+              <article aria-labelledby="half-life-title">
+                <div className="grid gap-8 border-t border-border pt-5 lg:grid-cols-[11rem_minmax(0,1fr)_22rem] lg:gap-12">
+                  <p className="font-mono text-[0.62rem] tracking-[0.13em] text-muted-foreground uppercase">
+                    Flagship · 01
+                  </p>
+                  <div>
+                    <h3
+                      id="half-life-title"
+                      className="text-5xl tracking-[-0.035em] sm:text-7xl"
+                    >
+                      Half-Life
+                    </h3>
+                    <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">
+                      An interactive tool that evaluates a person’s work week
+                      task-by-task for AI-automation exposure—then turns the
+                      result into an actionable handoff plan.
+                    </p>
+                  </div>
+                  <div className="lg:text-right">
+                    <p className="font-mono text-[0.62rem] tracking-[0.13em] text-accent uppercase">
+                      Core principle
+                    </p>
+                    <p className="mt-3 font-heading text-2xl leading-tight sm:text-3xl">
+                      LLM for judgment. Code for arithmetic.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="dark relative mt-10 overflow-hidden bg-background p-5 text-foreground sm:p-8 lg:p-12">
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgb(240_238_230/0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgb(240_238_230/0.045)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+                  />
+                  <div className="relative flex items-center justify-between gap-4 border-b border-border pb-5">
+                    <p className="font-mono text-[0.62rem] tracking-[0.14em] text-accent uppercase">
+                      Evaluation pipeline
+                    </p>
+                    <p className="font-mono text-[0.6rem] tracking-[0.12em] text-muted-foreground uppercase">
+                      SSE · Structured output · Auditable scoring
+                    </p>
+                  </div>
+
+                  <ol className="relative mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+                    {halfLifeFlow.map((step, index) => (
+                      <li
+                        key={step}
+                        className="min-h-36 bg-background p-5 sm:min-h-44 sm:p-6"
+                      >
+                        <span className="font-mono text-[0.62rem] text-accent">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <p className="mt-12 max-w-[12rem] font-heading text-2xl leading-tight sm:text-3xl">
+                          {step}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+
+                  <div className="relative mt-8 grid gap-6 border-t border-border pt-6 lg:grid-cols-[minmax(0,1fr)_28rem]">
+                    <p className="max-w-3xl text-base leading-7 text-foreground/82">
+                      Claude decomposes a described week into 12–22 tasks and
+                      supplies qualitative sub-scores across six axes. A small,
+                      deterministic scoring layer computes exposure percentage
+                      and the point where cumulative displaceable hours cross
+                      50%.
+                    </p>
+                    <p className="font-mono text-[0.64rem] leading-6 tracking-[0.08em] text-muted-foreground uppercase lg:text-right">
+                      If a score feels wrong, the disagreement has a visible
+                      axis—not a hidden calculation.
+                    </p>
+                  </div>
+                </div>
+
+                <ul
+                  aria-label="Half-Life technologies"
+                  className="mt-5 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[0.62rem] tracking-[0.12em] text-muted-foreground uppercase"
+                >
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>Anthropic SDK</li>
+                  <li>SSE streaming</li>
+                </ul>
+              </article>
+
+              <article aria-labelledby="papertrail-title">
+                <div className="grid gap-8 border-t border-border pt-5 lg:grid-cols-[11rem_minmax(0,1fr)_22rem] lg:gap-12">
+                  <p className="font-mono text-[0.62rem] tracking-[0.13em] text-muted-foreground uppercase">
+                    Flagship · 02
+                  </p>
+                  <div>
+                    <h3
+                      id="papertrail-title"
+                      className="text-5xl tracking-[-0.035em] sm:text-7xl"
+                    >
+                      PaperTrail
+                    </h3>
+                    <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">
+                      A research RAG application that combines published
+                      literature with user documents to stream grounded answers,
+                      citations, and portable exports.
+                    </p>
+                  </div>
+                  <div className="lg:text-right">
+                    <p className="font-mono text-[0.62rem] tracking-[0.13em] text-accent uppercase">
+                      Core principle
+                    </p>
+                    <p className="mt-3 font-heading text-2xl leading-tight sm:text-3xl">
+                      Retrieval should make every answer traceable.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative mt-10 overflow-hidden border border-foreground bg-secondary p-5 sm:p-8 lg:p-12">
+                  <div className="flex flex-col gap-4 border-b border-foreground/20 pb-5 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="font-mono text-[0.62rem] tracking-[0.14em] text-accent uppercase">
+                      Retrieval architecture
+                    </p>
+                    <p className="font-mono text-[0.6rem] tracking-[0.12em] text-muted-foreground uppercase">
+                      PubMed · arXiv · User documents
+                    </p>
+                  </div>
+
+                  <ol className="mt-12 grid gap-px overflow-hidden border border-foreground/15 bg-foreground/15 md:grid-cols-3">
+                    {paperTrailFlow.map((step, index) => (
+                      <li
+                        key={step}
+                        className="relative min-h-36 bg-secondary p-5 sm:min-h-44 sm:p-6"
+                      >
+                        <span className="font-mono text-[0.62rem] text-accent">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <p className="mt-12 max-w-[12rem] font-heading text-2xl leading-tight sm:text-3xl">
+                          {step}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+
+                  <div className="mt-8 grid gap-6 border-t border-foreground/20 pt-6 lg:grid-cols-[minmax(0,1fr)_28rem]">
+                    <p className="max-w-3xl text-base leading-7 text-foreground/82">
+                      One deployment handles ingestion, chunking, embedding, and
+                      background jobs. Hybrid dense and sparse retrieval
+                      supplies grounded context before answers stream with
+                      source citations.
+                    </p>
+                    <p className="font-mono text-[0.64rem] leading-6 tracking-[0.08em] text-muted-foreground uppercase lg:text-right">
+                      Containerized locally with a cloud-agnostic path from
+                      Docker Compose to Kubernetes.
+                    </p>
+                  </div>
+                </div>
+
+                <ul
+                  aria-label="PaperTrail technologies"
+                  className="mt-5 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[0.62rem] tracking-[0.12em] text-muted-foreground uppercase"
+                >
+                  <li>Next.js</li>
+                  <li>PostgreSQL</li>
+                  <li>Qdrant / pgvector</li>
+                  <li>Redis</li>
+                </ul>
+              </article>
             </div>
           </div>
         </section>

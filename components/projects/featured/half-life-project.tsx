@@ -4,7 +4,7 @@ export function HalfLifeProject() {
       aria-labelledby="half-life-title"
       className="grid items-start gap-10 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:gap-16"
     >
-      <div className="lg:sticky lg:top-28">
+      <div>
         <p className="font-mono text-[0.6rem] tracking-[0.15em] text-accent uppercase">
           Flagship project · 01
         </p>
@@ -42,8 +42,8 @@ export function HalfLifeProject() {
       </div>
 
       <div>
-        <div className="dark overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#151411] text-foreground shadow-[0_2rem_6rem_rgb(20_19_16/0.16)]">
-          <div className="flex items-center justify-between border-b border-border px-5 py-4 sm:px-7">
+        <div className="dark flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#151411] text-foreground lg:h-[38rem]">
+          <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4 sm:px-7">
             <p className="font-mono text-[0.6rem] tracking-[0.16em] uppercase">
               Half-Life
             </p>
@@ -52,7 +52,7 @@ export function HalfLifeProject() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-[minmax(0,1.45fr)_minmax(15rem,0.72fr)]">
+          <div className="grid min-h-0 flex-1 lg:grid-cols-[minmax(0,1.45fr)_minmax(15rem,0.72fr)]">
             <div className="p-6 sm:p-10 lg:p-12">
               <p className="font-mono text-[0.58rem] tracking-[0.14em] text-muted-foreground uppercase">
                 Work-week analysis

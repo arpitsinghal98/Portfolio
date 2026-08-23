@@ -1,3 +1,4 @@
+import { FeaturedProjectStack } from "@/components/projects/featured/featured-project-stack";
 import { HalfLifeProject } from "@/components/projects/featured/half-life-project";
 import { PaperTrailProject } from "@/components/projects/featured/papertrail-project";
 
@@ -8,7 +9,7 @@ export function ProjectsSection() {
       aria-labelledby="work-heading"
       className="scroll-mt-[4.5rem] bg-background text-foreground"
     >
-      <div className="mx-auto max-w-[97.5rem] px-5 py-24 sm:px-8 sm:py-32 lg:py-40">
+      <div className="mx-auto max-w-[97.5rem] px-5 pt-24 sm:px-8 sm:pt-32 lg:pt-40">
         <header className="grid gap-8 border-t border-foreground/80 pt-6 lg:grid-cols-[10rem_minmax(0,1fr)_28rem] lg:gap-12">
           <p className="font-mono text-[0.62rem] tracking-[0.15em] text-accent uppercase">
             01 / Work
@@ -25,9 +26,11 @@ export function ProjectsSection() {
           </p>
         </header>
 
-        <div className="mt-24 space-y-32 sm:mt-32 sm:space-y-44">
-          <HalfLifeProject />
-          <PaperTrailProject />
+        <div className="mt-24 sm:mt-32">
+          <FeaturedProjectStack>
+            <HalfLifeProject />
+            <PaperTrailProject />
+          </FeaturedProjectStack>
         </div>
       </div>
     </section>

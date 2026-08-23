@@ -2,11 +2,11 @@ export function PaperTrailProject() {
   return (
     <article
       aria-labelledby="papertrail-title"
-      className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:gap-16"
+      className="grid items-start gap-10 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:gap-16"
     >
-      <div>
-        <div className="overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-[#f8f6ef] shadow-[0_2rem_6rem_rgb(20_19_16/0.12)]">
-          <div className="flex items-center justify-between border-b border-foreground/10 px-5 py-4 sm:px-7">
+      <div className="lg:order-2">
+        <div className="flex flex-col overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-[#f8f6ef] lg:h-[38rem]">
+          <div className="flex shrink-0 items-center justify-between border-b border-foreground/10 px-5 py-4 sm:px-7">
             <p className="font-mono text-[0.6rem] tracking-[0.16em] uppercase">
               PaperTrail
             </p>
@@ -15,7 +15,7 @@ export function PaperTrailProject() {
             </p>
           </div>
 
-          <div className="grid min-h-[34rem] md:grid-cols-[11rem_minmax(0,1fr)]">
+          <div className="grid min-h-[34rem] flex-1 md:grid-cols-[11rem_minmax(0,1fr)] lg:min-h-0">
             <aside className="border-b border-foreground/10 bg-secondary/60 p-5 md:border-r md:border-b-0 sm:p-6">
               <p className="font-mono text-[0.55rem] tracking-[0.14em] text-muted-foreground uppercase">
                 Sources
@@ -86,7 +86,7 @@ export function PaperTrailProject() {
         </p>
       </div>
 
-      <div className="lg:sticky lg:top-28">
+      <div className="lg:order-1">
         <p className="font-mono text-[0.6rem] tracking-[0.15em] text-accent uppercase">
           Flagship project · 02
         </p>

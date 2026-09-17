@@ -1,3 +1,4 @@
+import { ExperienceSection } from "@/components/sections/experience-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { IntroductionSection } from "@/components/sections/introduction-section";
 import { MetricsSection } from "@/components/sections/metrics-section";
@@ -10,6 +11,7 @@ export default function Home() {
       <IntroductionSection />
       <MetricsSection />
       <SelectedWorkSection />
+      <ExperienceSection />
     </main>
   );
 }

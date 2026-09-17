@@ -56,7 +56,7 @@ export function PaperTrailProject() {
       </div>
 
       <div>
-        <div className="flex flex-col overflow-hidden rounded-[1.5rem] border border-foreground/10 bg-popover lg:h-[36rem]">
+        <div className="flex flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-popover lg:h-[36rem]">
           <div className="flex shrink-0 items-center justify-between border-b border-foreground/10 px-5 py-4 sm:px-7">
             <p className="font-mono text-[0.6875rem] tracking-[0.16em] uppercase">
               PaperTrail

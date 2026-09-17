@@ -8,7 +8,7 @@ export function MailIqProject() {
         aria-label="Open the MailIQ live project"
         className="group flex flex-col gap-5"
       >
-        <figure className="flex min-h-[22rem] flex-col overflow-hidden rounded-[1.25rem] border border-foreground/10 bg-popover transition-colors group-hover:border-accent/35 md:aspect-3/2 md:min-h-0">
+        <figure className="flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-popover transition-colors group-hover:border-accent/35 md:aspect-3/2 md:min-h-0">
           <figcaption className="sr-only">
             MailIQ — three-panel inbox
           </figcaption>

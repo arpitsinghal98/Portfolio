@@ -8,7 +8,7 @@ export function WhisprProject() {
         aria-label="Open the Whispr live project"
         className="group flex flex-col gap-5"
       >
-        <figure className="dark flex min-h-[22rem] flex-col overflow-hidden rounded-[1.25rem] border border-white/10 bg-card text-foreground transition-colors group-hover:border-accent/40 md:aspect-3/2 md:min-h-0">
+        <figure className="dark flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-white/10 bg-card text-foreground transition-colors group-hover:border-accent/40 md:aspect-3/2 md:min-h-0">
           <figcaption className="sr-only">
             Whispr — live transcript + memory bank
           </figcaption>

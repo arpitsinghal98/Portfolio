@@ -46,6 +46,7 @@ export function HeroSection() {
                 Scroll ↓
               </span>
               <Button
+                nativeButton={false}
                 render={
                   <a
                     href="mailto:arpitsinghal98@outlook.com"

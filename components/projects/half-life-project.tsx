@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { createEmailHref } from "@/config/site";
 
 export function HalfLifeProject() {
   return (
@@ -8,7 +9,7 @@ export function HalfLifeProject() {
       className="grid items-start gap-10 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:gap-16"
     >
       <div>
-        <p className="font-mono text-[0.6875rem] tracking-[0.15em] text-accent uppercase">
+        <p className="font-mono text-label tracking-label text-accent uppercase">
           Flagship project · 01
         </p>
         <h3
@@ -23,7 +24,7 @@ export function HalfLifeProject() {
         </p>
 
         <div className="mt-10 border-t border-border pt-5">
-          <p className="font-mono text-[0.6875rem] tracking-[0.13em] text-muted-foreground uppercase">
+          <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
             Design decision
           </p>
           <p className="mt-4 font-heading text-3xl leading-[1.05]">
@@ -35,7 +36,7 @@ export function HalfLifeProject() {
 
         <ul
           aria-label="Half-Life technologies"
-          className="mt-9 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[0.6875rem] tracking-[0.11em] text-muted-foreground uppercase"
+          className="mt-9 flex flex-wrap gap-x-4 gap-y-2 font-mono text-label tracking-compact text-muted-foreground uppercase"
         >
           <li>Node.js</li>
           <li>Anthropic SDK</li>
@@ -46,31 +47,31 @@ export function HalfLifeProject() {
         <Button
           nativeButton={false}
           render={
-            <a href="mailto:arpitsinghal98@outlook.com?subject=Half-Life%20walkthrough">
+            <a href={createEmailHref("Half-Life walkthrough")}>
               Request walkthrough
               <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
             </a>
           }
           variant="outline"
           size="sm"
-          className="mt-8 border-accent/45 bg-transparent font-mono text-[0.6875rem] tracking-[0.08em] text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+          className="mt-8 border-accent/45 bg-transparent font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
         />
       </div>
 
       <div>
         <div className="dark flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-card text-foreground lg:h-[36rem]">
           <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4 sm:px-7">
-            <p className="font-mono text-[0.6875rem] tracking-[0.16em] uppercase">
+            <p className="font-mono text-label tracking-emphasis uppercase">
               Half-Life
             </p>
-            <p className="font-mono text-[0.6875rem] tracking-[0.13em] text-accent uppercase">
+            <p className="font-mono text-label tracking-label text-accent uppercase">
               System walkthrough
             </p>
           </div>
 
           <div className="grid min-h-0 flex-1 lg:grid-cols-[minmax(0,1.45fr)_minmax(15rem,0.72fr)]">
             <div className="p-6 sm:p-10 lg:p-12">
-              <p className="font-mono text-[0.6875rem] tracking-[0.14em] text-muted-foreground uppercase">
+              <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
                 Work-week analysis
               </p>
               <p className="mt-7 max-w-lg font-heading text-[clamp(2.8rem,5vw,5.25rem)] leading-[0.92] tracking-[-0.035em]">
@@ -81,29 +82,23 @@ export function HalfLifeProject() {
 
               <ol className="mt-12 border-t border-border">
                 <li className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-b border-border py-5">
-                  <span className="font-mono text-[0.6875rem] text-accent">
-                    01
-                  </span>
+                  <span className="font-mono text-label text-accent">01</span>
                   <span className="text-sm">Describe the work week</span>
-                  <span className="font-mono text-[0.625rem] tracking-[0.1em] text-muted-foreground uppercase">
+                  <span className="font-mono text-micro tracking-compact text-muted-foreground uppercase">
                     Input
                   </span>
                 </li>
                 <li className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-b border-border py-5">
-                  <span className="font-mono text-[0.6875rem] text-accent">
-                    02
-                  </span>
+                  <span className="font-mono text-label text-accent">02</span>
                   <span className="text-sm">Decompose into 12–22 tasks</span>
-                  <span className="font-mono text-[0.625rem] tracking-[0.1em] text-muted-foreground uppercase">
+                  <span className="font-mono text-micro tracking-compact text-muted-foreground uppercase">
                     Claude
                   </span>
                 </li>
                 <li className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-b border-border py-5">
-                  <span className="font-mono text-[0.6875rem] text-accent">
-                    03
-                  </span>
+                  <span className="font-mono text-label text-accent">03</span>
                   <span className="text-sm">Score six qualitative axes</span>
-                  <span className="font-mono text-[0.625rem] tracking-[0.1em] text-muted-foreground uppercase">
+                  <span className="font-mono text-micro tracking-compact text-muted-foreground uppercase">
                     Streaming
                   </span>
                 </li>
@@ -112,7 +107,7 @@ export function HalfLifeProject() {
 
             <aside className="flex flex-col justify-between bg-accent p-6 text-accent-foreground sm:p-10 lg:p-9">
               <div>
-                <p className="font-mono text-[0.6875rem] tracking-[0.14em] uppercase opacity-70">
+                <p className="font-mono text-label tracking-label uppercase opacity-70">
                   System boundary
                 </p>
                 <p className="mt-6 font-heading text-4xl leading-[0.98] tracking-[-0.025em]">

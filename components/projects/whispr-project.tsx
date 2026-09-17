@@ -14,10 +14,10 @@ export function WhisprProject() {
           </figcaption>
 
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
-            <span className="font-mono text-[0.6875rem] tracking-[0.14em] uppercase">
+            <span className="font-mono text-label tracking-label uppercase">
               Whispr
             </span>
-            <span className="font-mono text-[0.625rem] tracking-[0.1em] text-accent uppercase">
+            <span className="font-mono text-micro tracking-compact text-accent uppercase">
               System walkthrough
             </span>
           </div>
@@ -26,7 +26,7 @@ export function WhisprProject() {
             <div className="p-5">
               <div className="flex items-center justify-between gap-4">
                 <p className="font-heading text-2xl">Live transcript</p>
-                <span className="flex items-center gap-2 font-mono text-[0.625rem] text-accent uppercase">
+                <span className="flex items-center gap-2 font-mono text-micro text-accent uppercase">
                   <span className="size-1.5 rounded-full bg-accent" />
                   Recording
                 </span>
@@ -34,13 +34,13 @@ export function WhisprProject() {
 
               <div className="mt-6 space-y-4 text-xs leading-5 text-foreground/80">
                 <p>
-                  <span className="mr-3 font-mono text-[0.625rem] text-muted-foreground">
+                  <span className="mr-3 font-mono text-micro text-muted-foreground">
                     10:42
                   </span>
                   We should keep the decision attached to the meeting context.
                 </p>
                 <p>
-                  <span className="mr-3 font-mono text-[0.625rem] text-muted-foreground">
+                  <span className="mr-3 font-mono text-micro text-muted-foreground">
                     10:43
                   </span>
                   Turn that into an action item and assign an owner.
@@ -49,7 +49,7 @@ export function WhisprProject() {
             </div>
 
             <aside className="border-border border-t bg-secondary/55 p-5 sm:border-t-0 sm:border-l">
-              <p className="font-mono text-[0.625rem] tracking-[0.12em] text-muted-foreground uppercase">
+              <p className="font-mono text-micro tracking-label text-muted-foreground uppercase">
                 Memory bank
               </p>
               <dl className="mt-5 space-y-4 text-xs">
@@ -68,7 +68,7 @@ export function WhisprProject() {
 
         <div className="flex flex-col gap-3">
           <header className="flex items-baseline gap-3.5">
-            <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-accent">
+            <span className="font-mono text-label tracking-emphasis text-accent">
               04
             </span>
             <h3 className="text-[2.5rem] leading-none tracking-[-0.02em]">
@@ -80,13 +80,13 @@ export function WhisprProject() {
             </span>
           </header>
 
-          <p className="max-w-[46ch] text-[0.9375rem] leading-[1.6] text-foreground/75">
+          <p className="max-w-[46ch] text-body-sm leading-[1.6] text-foreground/75">
             Live meeting transcription with a memory bank you can question
             afterwards — built in a weekend, and the first draft of what I now
             work on full time.
           </p>
 
-          <p className="font-mono text-[0.6875rem] text-muted-foreground">
+          <p className="font-mono text-label text-muted-foreground">
             Remix · Firebase · Google Generative AI
           </p>
         </div>

@@ -7,14 +7,14 @@ export function ExperienceDetail({ experience }: { experience: Experience }) {
       className="mt-10 grid gap-8 border-foreground/20 border-t pt-7 lg:grid-cols-[minmax(14rem,0.65fr)_minmax(0,1.35fr)] lg:gap-16"
     >
       <header>
-        <p className="font-mono text-[0.6875rem] tracking-[0.14em] text-accent uppercase">
+        <p className="font-mono text-label tracking-label text-accent uppercase">
           Selected role
         </p>
         <h3 className="mt-4 text-5xl leading-none tracking-[-0.03em] sm:text-6xl">
           {experience.company}
         </h3>
         <p className="mt-4 text-base text-foreground/75">{experience.role}</p>
-        <p className="mt-2 font-mono text-[0.6875rem] text-foreground/50">
+        <p className="mt-2 font-mono text-label text-foreground/50">
           {experience.dates}
         </p>
       </header>

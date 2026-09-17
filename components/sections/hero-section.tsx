@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { createEmailHref, siteConfig } from "@/config/site";
 
 export function HeroSection() {
   return (
@@ -16,11 +17,11 @@ export function HeroSection() {
         className="absolute inset-0 bg-linear-to-b from-background/20 via-background/70 to-background"
       />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[97.5rem] flex-col px-5 sm:px-8">
-        <header className="flex items-baseline justify-between gap-5 py-6 font-mono text-[0.68rem] tracking-[0.18em] uppercase">
-          <span>Arpit Singhal</span>
+      <div className="site-container page-gutter relative flex min-h-svh flex-col">
+        <header className="flex items-baseline justify-between gap-5 py-6 font-mono text-label tracking-wide uppercase">
+          <span>{siteConfig.name}</span>
           <span className="hidden text-foreground/80 sm:inline">
-            Software Engineer · SF Bay Area
+            {siteConfig.role} · {siteConfig.location}
           </span>
           <span className="text-accent">Open to work</span>
         </header>
@@ -42,22 +43,22 @@ export function HeroSection() {
             </p>
 
             <div className="flex items-center justify-between gap-6 sm:justify-end">
-              <span className="font-mono text-[0.68rem] tracking-[0.16em] text-foreground/70 uppercase">
+              <span className="font-mono text-label tracking-emphasis text-foreground/70 uppercase">
                 Scroll ↓
               </span>
               <Button
                 nativeButton={false}
                 render={
                   <a
-                    href="mailto:arpitsinghal98@outlook.com"
-                    aria-label="Email Arpit Singhal"
+                    href={createEmailHref()}
+                    aria-label={`Email ${siteConfig.name}`}
                   >
                     Email me
                     <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
                   </a>
                 }
                 size="lg"
-                className="bg-accent px-5 font-mono text-[0.68rem] tracking-[0.12em] text-accent-foreground uppercase hover:bg-accent/90"
+                className="bg-accent px-5 font-mono text-label tracking-label text-accent-foreground uppercase hover:bg-accent/90"
               />
             </div>
           </div>

@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "typecheck": "next typegen && tsc --noEmit",
+    "validate:content": "bun scripts/validate-content.ts",
+    "check": "bun run lint && bun run typecheck && bun run validate:content && bun run build"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

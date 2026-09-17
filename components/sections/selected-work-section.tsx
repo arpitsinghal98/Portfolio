@@ -8,18 +8,18 @@ export function SelectedWorkSection() {
     <section
       id="work"
       aria-labelledby="selected-work-heading"
-      className="scroll-mt-[4.5rem] bg-background px-5 pt-[7.5rem] text-foreground sm:px-8"
+      className="page-gutter scroll-mt-[4.5rem] bg-background pt-[7.5rem] text-foreground"
     >
-      <div className="mx-auto w-full max-w-[97.5rem]">
+      <div className="site-container">
         <header className="flex items-baseline gap-5 border-border border-b pb-2.5">
           <h2
             id="selected-work-heading"
-            className="font-mono text-[0.6875rem] tracking-[0.18em] text-muted-foreground uppercase"
+            className="font-mono text-label tracking-wide text-muted-foreground uppercase"
           >
             Selected work
           </h2>
           <span aria-hidden="true" className="flex-1" />
-          <p className="font-mono text-[0.6875rem] tracking-[0.18em] text-muted-foreground uppercase">
+          <p className="font-mono text-label tracking-wide text-muted-foreground uppercase">
             01 — 04
           </p>
         </header>

@@ -38,14 +38,14 @@ export function ExperienceTimeline() {
   return (
     <>
       <div className="mt-10 hidden grid-cols-[5.75rem_minmax(0,1fr)] items-center gap-x-[1.125rem] gap-y-2 md:grid">
-        <p className="font-mono text-[0.625rem] tracking-[0.14em] text-foreground/50 uppercase">
+        <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
           Years
         </p>
         <div className="relative h-4 border-foreground/20 border-b">
           {yearTicks.map((year) => (
             <span
               key={year}
-              className="absolute bottom-0 translate-x-[-50%] font-mono text-[0.625rem] text-foreground/50"
+              className="absolute bottom-0 translate-x-[-50%] font-mono text-micro text-foreground/50"
               style={{ left: tickPosition(year) }}
             >
               &apos;{String(year).slice(2)}
@@ -53,7 +53,7 @@ export function ExperienceTimeline() {
           ))}
         </div>
 
-        <p className="self-start pt-2 font-mono text-[0.625rem] tracking-[0.14em] text-foreground/50 uppercase">
+        <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/50 uppercase">
           Roles
         </p>
         <ol aria-label="Work experience timeline" className="space-y-1">
@@ -85,8 +85,8 @@ export function ExperienceTimeline() {
                     aria-hidden="true"
                     className={
                       isSelected
-                        ? "absolute inset-y-0 flex items-center px-2.5 font-mono text-[0.6875rem] text-accent"
-                        : "absolute inset-y-0 flex items-center px-2.5 font-mono text-[0.6875rem] text-foreground/70"
+                        ? "absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-accent"
+                        : "absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-foreground/70"
                     }
                     style={{ left: position.left }}
                   >
@@ -98,7 +98,7 @@ export function ExperienceTimeline() {
           })}
         </ol>
 
-        <p className="self-start pt-2 font-mono text-[0.625rem] tracking-[0.14em] text-foreground/50 uppercase">
+        <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/50 uppercase">
           Studied
         </p>
         <div className="relative h-8">
@@ -108,7 +108,7 @@ export function ExperienceTimeline() {
             style={timelinePosition(education.start, education.end)}
           />
           <span
-            className="absolute inset-y-0 flex items-center px-2.5 font-mono text-[0.6875rem] text-foreground/70"
+            className="absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-foreground/70"
             style={{
               left: timelinePosition(education.start, education.end).left,
             }}
@@ -122,7 +122,7 @@ export function ExperienceTimeline() {
       </div>
 
       <div className="mt-8 md:hidden">
-        <p className="font-mono text-[0.625rem] tracking-[0.14em] text-foreground/50 uppercase">
+        <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
           Roles
         </p>
         <ol className="mt-3 border-foreground/20 border-t">
@@ -150,7 +150,7 @@ export function ExperienceTimeline() {
                       >
                         {experience.company}
                       </span>
-                      <span className="font-mono text-[0.625rem] text-foreground/55">
+                      <span className="font-mono text-micro text-foreground/55">
                         {experience.dates}
                       </span>
                     </span>
@@ -165,13 +165,13 @@ export function ExperienceTimeline() {
         </ol>
 
         <div className="mt-8">
-          <p className="font-mono text-[0.625rem] tracking-[0.14em] text-foreground/50 uppercase">
+          <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
             Studied
           </p>
           <div className="mt-3 border border-foreground/30 border-dashed p-4">
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="font-heading text-2xl">Illinois Tech</h3>
-              <span className="font-mono text-[0.625rem] text-foreground/55">
+              <span className="font-mono text-micro text-foreground/55">
                 {education.dates}
               </span>
             </div>

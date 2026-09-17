@@ -13,7 +13,7 @@
       "!.next",
       "!dist",
       "!build",
-      "!Arpit Singhal - Portfolio.dc.html"
+      "!docs/portfolio-reference.html"
     ]
   },
   "formatter": {

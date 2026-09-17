@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { createEmailHref } from "@/config/site";
 
 export function PaperTrailProject() {
   return (
@@ -8,7 +9,7 @@ export function PaperTrailProject() {
       className="grid items-start gap-10 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:gap-16"
     >
       <div>
-        <p className="font-mono text-[0.6875rem] tracking-[0.15em] text-accent uppercase">
+        <p className="font-mono text-label tracking-label text-accent uppercase">
           Flagship project · 02
         </p>
         <h3
@@ -23,7 +24,7 @@ export function PaperTrailProject() {
         </p>
 
         <div className="mt-10 border-t border-border pt-5">
-          <p className="font-mono text-[0.6875rem] tracking-[0.13em] text-muted-foreground uppercase">
+          <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
             Design decision
           </p>
           <p className="mt-4 font-heading text-3xl leading-[1.05]">
@@ -33,7 +34,7 @@ export function PaperTrailProject() {
 
         <ul
           aria-label="PaperTrail technologies"
-          className="mt-9 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[0.6875rem] tracking-[0.11em] text-muted-foreground uppercase"
+          className="mt-9 flex flex-wrap gap-x-4 gap-y-2 font-mono text-label tracking-compact text-muted-foreground uppercase"
         >
           <li>Next.js</li>
           <li>PostgreSQL</li>
@@ -44,31 +45,31 @@ export function PaperTrailProject() {
         <Button
           nativeButton={false}
           render={
-            <a href="mailto:arpitsinghal98@outlook.com?subject=PaperTrail%20walkthrough">
+            <a href={createEmailHref("PaperTrail walkthrough")}>
               Request walkthrough
               <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
             </a>
           }
           variant="outline"
           size="sm"
-          className="mt-8 border-accent/45 bg-transparent font-mono text-[0.6875rem] tracking-[0.08em] text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+          className="mt-8 border-accent/45 bg-transparent font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
         />
       </div>
 
       <div>
         <div className="flex flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-popover lg:h-[36rem]">
           <div className="flex shrink-0 items-center justify-between border-b border-foreground/10 px-5 py-4 sm:px-7">
-            <p className="font-mono text-[0.6875rem] tracking-[0.16em] uppercase">
+            <p className="font-mono text-label tracking-emphasis uppercase">
               PaperTrail
             </p>
-            <p className="font-mono text-[0.6875rem] tracking-[0.13em] text-muted-foreground uppercase">
+            <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
               System walkthrough
             </p>
           </div>
 
           <div className="grid min-h-[34rem] flex-1 md:grid-cols-[11rem_minmax(0,1fr)] lg:min-h-0">
             <aside className="border-b border-foreground/10 bg-secondary/60 p-5 sm:p-6 md:border-r md:border-b-0">
-              <p className="font-mono text-[0.6875rem] tracking-[0.14em] text-muted-foreground uppercase">
+              <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
                 Sources
               </p>
               <ul className="mt-7 space-y-3 text-sm">
@@ -80,14 +81,14 @@ export function PaperTrailProject() {
                   Uploaded PDFs
                 </li>
               </ul>
-              <p className="mt-12 font-mono text-[0.625rem] leading-5 tracking-[0.09em] text-muted-foreground uppercase">
+              <p className="mt-12 font-mono text-micro leading-5 tracking-compact text-muted-foreground uppercase">
                 Dense + sparse retrieval
               </p>
             </aside>
 
             <div className="flex flex-col p-6 sm:p-10 lg:p-12">
               <div>
-                <p className="font-mono text-[0.6875rem] tracking-[0.14em] text-accent uppercase">
+                <p className="font-mono text-label tracking-label text-accent uppercase">
                   Research question
                 </p>
                 <p className="mt-5 max-w-2xl font-heading text-3xl leading-tight sm:text-5xl">
@@ -97,10 +98,10 @@ export function PaperTrailProject() {
 
               <div className="mt-12 border-t border-foreground/10 pt-7">
                 <div className="flex items-center justify-between gap-4">
-                  <p className="font-mono text-[0.6875rem] tracking-[0.14em] text-muted-foreground uppercase">
+                  <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
                     Grounded response
                   </p>
-                  <span className="font-mono text-[0.625rem] tracking-[0.1em] text-accent uppercase">
+                  <span className="font-mono text-micro tracking-compact text-accent uppercase">
                     Streaming
                   </span>
                 </div>
@@ -110,19 +111,19 @@ export function PaperTrailProject() {
                   Each claim stays connected to its source context.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-2">
-                  <span className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-[0.625rem] tracking-[0.08em] uppercase">
+                  <span className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-micro tracking-compact uppercase">
                     [1] PubMed
                   </span>
-                  <span className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-[0.625rem] tracking-[0.08em] uppercase">
+                  <span className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-micro tracking-compact uppercase">
                     [2] arXiv
                   </span>
-                  <span className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-[0.625rem] tracking-[0.08em] uppercase">
+                  <span className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-micro tracking-compact uppercase">
                     [3] Document
                   </span>
                 </div>
               </div>
 
-              <p className="mt-auto border-t border-foreground/10 pt-6 font-mono text-[0.625rem] leading-5 tracking-[0.09em] text-muted-foreground uppercase">
+              <p className="mt-auto border-t border-foreground/10 pt-6 font-mono text-micro leading-5 tracking-compact text-muted-foreground uppercase">
                 Parse → chunk → embed / index → hybrid retrieve → generate →
                 cite / export
               </p>

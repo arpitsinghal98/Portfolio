@@ -5,13 +5,13 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="dark scroll-mt-[4.5rem] bg-card px-5 py-[6.875rem] text-foreground sm:px-8"
+      className="page-gutter dark scroll-mt-[4.5rem] bg-card py-[6.875rem] text-foreground"
     >
-      <div className="mx-auto w-full max-w-[97.5rem]">
+      <div className="site-container">
         <header className="flex items-baseline gap-5">
           <h2
             id="experience-heading"
-            className="font-mono text-[0.6875rem] tracking-[0.18em] text-foreground/55 uppercase"
+            className="font-mono text-label tracking-wide text-foreground/55 uppercase"
           >
             Seven years
           </h2>

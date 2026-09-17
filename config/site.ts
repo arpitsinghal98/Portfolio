@@ -17,6 +17,7 @@ export const siteConfig = {
   name: "Arpit Singhal",
   role: "Software Engineer",
   location: "SF Bay Area",
+  availability: "Open to work",
   email: "arpitsinghal98@outlook.com",
   title: "Arpit Singhal — Software Engineer",
   description:

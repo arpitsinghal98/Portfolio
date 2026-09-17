@@ -23,7 +23,7 @@ export function HeroSection() {
           <span className="hidden text-foreground/80 sm:inline">
             {siteConfig.role} · {siteConfig.location}
           </span>
-          <span className="text-accent">Open to work</span>
+          <span className="text-accent">{siteConfig.availability}</span>
         </header>
 
         <div className="mt-auto pb-8 sm:pb-9">

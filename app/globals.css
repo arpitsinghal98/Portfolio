@@ -10,7 +10,7 @@
   --font-sans: var(--font-schibsted-grotesk);
   --font-serif: var(--font-instrument-serif);
   --container-site: 97.5rem;
-  --text-micro: 0.6875rem;
+  --text-micro: 0.75rem;
   --text-label: 0.75rem;
   --text-body-sm: 0.9375rem;
   --tracking-compact: 0.1em;
@@ -69,13 +69,13 @@
   --secondary-foreground: #141310;
   --muted: #e6e3d8;
   --muted-foreground: #6b6659;
-  --accent: #c8471c;
+  --accent: #b33d17;
   --accent-foreground: #f0eee6;
   --destructive: #b42318;
   --border: #d5d0c1;
   --input: #c8c2b2;
-  --ring: #c8471c;
-  --chart-1: #c8471c;
+  --ring: var(--accent);
+  --chart-1: var(--accent);
   --chart-2: #ff7a4d;
   --chart-3: #141310;
   --chart-4: #6b6659;
@@ -86,10 +86,10 @@
   --sidebar-foreground: #141310;
   --sidebar-primary: #141310;
   --sidebar-primary-foreground: #f0eee6;
-  --sidebar-accent: #c8471c;
+  --sidebar-accent: var(--accent);
   --sidebar-accent-foreground: #f0eee6;
   --sidebar-border: #d5d0c1;
-  --sidebar-ring: #c8471c;
+  --sidebar-ring: var(--accent);
 }
 
 @media (width >= 40rem) {

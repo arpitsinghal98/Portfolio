@@ -1,8 +1,9 @@
 export function IntroductionSection() {
   return (
     <section
+      id="about"
       aria-labelledby="introduction-heading"
-      className="page-gutter bg-background py-24 text-foreground lg:py-28"
+      className="page-gutter bg-background py-16 text-foreground sm:py-20 lg:py-24"
     >
       <div className="site-container grid items-start gap-10 lg:grid-cols-[11.25rem_minmax(0,1fr)] lg:gap-14">
         <p className="font-mono text-label tracking-wide text-muted-foreground uppercase">
@@ -26,9 +27,9 @@ export function IntroductionSection() {
               every time.
             </p>
             <p>
-              Looking for founding, product, and forward-deployed engineering
-              roles. Backend systems, API design, data pipelines, reliability,
-              performance.
+              Users should stay in control of what a product remembers,
+              corrects, or forgets. That boundary between product decisions and
+              backend systems is the work I enjoy.
             </p>
           </div>
         </div>

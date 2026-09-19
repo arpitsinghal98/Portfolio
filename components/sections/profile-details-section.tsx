@@ -1,5 +1,3 @@
-import { education } from "@/data/experiences";
-
 const profileDetails = [
   {
     label: "Stack",
@@ -8,17 +6,9 @@ const profileDetails = [
     ],
   },
   {
-    label: "Study",
-    lines: [
-      education.degree,
-      education.institution,
-      "Nine Salesforce and Copado certifications",
-    ],
-  },
-  {
     label: "Off the clock",
     lines: [
-      "New to pickleball. Currently trying to survive in the swimming pool.",
+      "Learning pickleball. Still trying to survive in the swimming pool.",
     ],
   },
 ] as const;
@@ -27,15 +17,15 @@ export function ProfileDetailsSection() {
   return (
     <section
       aria-label="Profile details"
-      className="page-gutter bg-background py-20 text-foreground sm:py-24 lg:py-28"
+      className="page-gutter border-border border-t bg-background py-16 text-foreground sm:py-20"
     >
-      <div className="site-container grid gap-10 md:grid-cols-3 md:gap-12">
+      <div className="site-container grid gap-8 md:grid-cols-2 md:gap-16">
         {profileDetails.map((detail) => (
           <article key={detail.label} className="space-y-3">
             <h2 className="font-mono text-label tracking-emphasis text-muted-foreground uppercase">
               {detail.label}
             </h2>
-            <p className="text-body-sm leading-[1.7] text-foreground/80">
+            <p className="max-w-[52ch] text-body-sm leading-[1.7] text-foreground/80">
               {detail.lines.map((line) => (
                 <span key={line} className="block">
                   {line}

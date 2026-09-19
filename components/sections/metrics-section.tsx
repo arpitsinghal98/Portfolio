@@ -1,9 +1,4 @@
-const metrics = [
-  { label: "People on the product", value: "400k" },
-  { label: "Lower transcription cost", value: "80%" },
-  { label: "Fewer chat failures", value: "30%" },
-  { label: "Systems kept in sync", value: "18" },
-];
+import { careerMetrics } from "@/data/metrics";
 
 export function MetricsSection() {
   return (
@@ -11,14 +6,22 @@ export function MetricsSection() {
       aria-label="Career impact metrics"
       className="page-gutter dark bg-card py-[2.125rem] text-foreground"
     >
-      <dl className="site-container grid grid-cols-[repeat(auto-fit,minmax(11.875rem,1fr))] gap-[1.875rem]">
-        {metrics.map((metric) => (
-          <div key={metric.label} className="flex flex-col-reverse gap-1.5">
+      <dl className="site-container grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-4 md:gap-7">
+        {careerMetrics.map((metric) => (
+          <div
+            key={metric.label}
+            className="flex min-w-0 flex-col-reverse justify-end gap-1.5"
+          >
             <dt className="font-mono text-label tracking-label text-foreground/55 uppercase">
               {metric.label}
             </dt>
-            <dd className="font-heading text-[clamp(2.375rem,4.4vw,3.875rem)] leading-none">
+            <dd className="flex flex-wrap items-baseline gap-x-2 gap-y-1 font-heading text-[clamp(2.375rem,4.4vw,3.875rem)] leading-none">
               {metric.value}
+              {metric.qualifier ? (
+                <span className="font-sans text-sm text-foreground/70">
+                  {metric.qualifier}
+                </span>
+              ) : null}
             </dd>
           </div>
         ))}

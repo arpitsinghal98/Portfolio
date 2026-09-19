@@ -5,7 +5,7 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="page-gutter dark scroll-mt-[4.5rem] bg-card py-20 text-foreground sm:py-24 lg:py-[6.875rem]"
+      className="page-gutter dark bg-card py-20 text-foreground sm:py-24 lg:py-[6.875rem]"
     >
       <div className="site-container">
         <header className="flex items-baseline gap-5">
@@ -13,7 +13,7 @@ export function ExperienceSection() {
             id="experience-heading"
             className="font-mono text-label tracking-wide text-foreground/55 uppercase"
           >
-            Seven years
+            Experience
           </h2>
           <span aria-hidden="true" className="h-px flex-1 bg-foreground/20" />
           <p className="font-mono text-xs text-accent">Jul 2019 — Present</p>

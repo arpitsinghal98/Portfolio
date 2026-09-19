@@ -1,11 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { createEmailHref, siteConfig } from "@/config/site";
-
-const socialLinks = [
-  { label: "GitHub", href: siteConfig.links.github },
-  { label: "LinkedIn", href: siteConfig.links.linkedin },
-] as const;
+import { LinkList } from "@/components/link-list";
+import { contactLinks, createEmailHref, siteConfig } from "@/config/site";
 
 export function ContactSection() {
   const emailHref = createEmailHref("Portfolio inquiry");
@@ -14,7 +8,7 @@ export function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="page-gutter dark scroll-mt-[4.5rem] bg-background text-foreground"
+      className="page-gutter dark bg-background text-foreground"
     >
       <div className="site-container py-20 sm:py-24 lg:pt-28 lg:pb-10">
         <header className="flex items-baseline gap-5">
@@ -29,8 +23,7 @@ export function ContactSection() {
 
         <div className="pt-16 sm:pt-20">
           <p className="max-w-[56ch] text-base leading-[1.65] text-foreground/70">
-            Looking for founding, product, and forward-deployed engineering
-            roles where backend systems, AI workflows, and reliability matter.
+            {siteConfig.positioning}
           </p>
 
           <a
@@ -48,34 +41,14 @@ export function ContactSection() {
         </div>
 
         <footer className="mt-16 flex flex-col gap-6 border-foreground/20 border-t pt-6 sm:mt-20 sm:flex-row sm:items-center sm:justify-between">
-          <nav
-            aria-label="Contact links"
-            className="flex flex-wrap items-center gap-x-8 gap-y-4"
-          >
-            <Button
-              nativeButton={false}
-              render={<a href={emailHref}>{siteConfig.email}</a>}
-              variant="link"
-              className="h-11 rounded-none px-0 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline"
-            />
+          <LinkList
+            label="Contact links"
+            links={contactLinks}
+            className="gap-x-8"
+            showIcons
+          />
 
-            {socialLinks.map((link) => (
-              <Button
-                key={link.label}
-                nativeButton={false}
-                render={
-                  <a href={link.href} target="_blank" rel="noreferrer">
-                    {link.label}
-                    <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
-                  </a>
-                }
-                variant="link"
-                className="h-11 rounded-none px-0 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline"
-              />
-            ))}
-          </nav>
-
-          <p className="font-mono text-micro tracking-emphasis text-foreground/45 uppercase">
+          <p className="font-mono text-micro tracking-emphasis text-muted-foreground uppercase">
             {siteConfig.location}
           </p>
         </footer>

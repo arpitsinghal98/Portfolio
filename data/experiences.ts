@@ -1,3 +1,5 @@
+import { impactMetrics } from "@/data/metrics";
+
 export type Experience = {
   id: string;
   company: string;
@@ -5,6 +7,7 @@ export type Experience = {
   dates: string;
   start: number;
   end: number;
+  outcome: string;
   summary: string;
   highlights: readonly string[];
   current?: boolean;
@@ -23,6 +26,7 @@ export const experiences = [
     dates: "Jul 2019 — Jan 2022",
     start: monthIndex(2019, 7),
     end: monthIndex(2022, 2),
+    outcome: "Resolved Tier-3 production issues under SLA.",
     summary:
       "Supported a Salesforce-based medical information platform used by healthcare professionals in a regulated pharmaceutical environment.",
     highlights: [
@@ -38,10 +42,11 @@ export const experiences = [
     dates: "Jan 2022 — Dec 2022",
     start: monthIndex(2022, 1),
     end: monthIndex(2023, 1),
+    outcome: impactMetrics.connectedSystems.outcome,
     summary:
       "Built enterprise integration workflows for VMware’s Salesforce-based customer data platform.",
     highlights: [
-      "Kept 18 enterprise applications synchronized using Platform Events, Apex triggers, subscriber logic, and batch processing.",
+      impactMetrics.connectedSystems.detail,
       "Supported the master-data migration to Dun & Bradstreet to improve customer-reference consistency.",
       "Built Apex classes, triggers, batch jobs, SOQL queries, and production unit tests.",
     ],
@@ -53,6 +58,7 @@ export const experiences = [
     dates: "Feb 2025 — Aug 2025",
     start: monthIndex(2025, 2),
     end: monthIndex(2025, 9),
+    outcome: "Moved production from GCP to AWS.",
     summary:
       "Improved the infrastructure and release path behind a live financial product for small businesses.",
     highlights: [
@@ -69,12 +75,12 @@ export const experiences = [
     start: monthIndex(2025, 8),
     end: timelineEnd,
     current: true,
-    summary:
-      "Building AI memory infrastructure for a product used by more than 400,000 professionals and students.",
+    outcome: impactMetrics.transcriptionCost.outcome,
+    summary: impactMetrics.productReach.detail,
     highlights: [
       "Built chat infrastructure connecting five-plus context sources, including recordings, previous chats, Gmail, notes, and summaries.",
-      "Introduced voice activity detection before transcription, reducing STT-related LLM cost by 80%.",
-      "Added rate limiting and response-flow controls that reduced avoidable AI chat failures by an estimated 30%.",
+      impactMetrics.transcriptionCost.detail,
+      impactMetrics.chatFailures.detail,
       "Shipped subscriptions, paywall experiments, and product event tracking across the application.",
     ],
   },

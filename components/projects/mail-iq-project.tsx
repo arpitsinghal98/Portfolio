@@ -1,93 +1,53 @@
+import {
+  ProjectVisual,
+  SupportingProject,
+} from "@/components/projects/project-layout";
+import { projects } from "@/data/projects";
+
+const inboxExamples = [
+  { category: "Product updates", action: "Archive" },
+  { category: "Receipts", action: "Label" },
+  { category: "Needs reply", action: "Keep" },
+];
+
 export function MailIqProject() {
   return (
-    <article className="border-border border-b md:border-0">
-      <a
-        href="https://mail-iq-jump.vercel.app"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Open the MailIQ live project"
-        className="group flex flex-col gap-5 py-7 md:py-0"
+    <SupportingProject project={projects.mailIq}>
+      <ProjectVisual
+        project={projects.mailIq}
+        className="aspect-3/2 rounded-2xl bg-popover"
       >
-        <figure className="hidden min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-popover transition-colors group-hover:border-accent/35 md:flex md:aspect-3/2 md:min-h-0">
-          <figcaption className="sr-only">
-            MailIQ — three-panel inbox
-          </figcaption>
-
-          <div className="flex items-center justify-between border-b border-foreground/10 px-5 py-4">
-            <span className="font-mono text-label tracking-label uppercase">
-              MailIQ
-            </span>
-            <span className="font-mono text-micro tracking-compact text-muted-foreground uppercase">
-              System walkthrough
-            </span>
+        <div className="grid min-h-0 flex-1 @md/project:grid-cols-[7.5rem_minmax(0,1fr)]">
+          <aside className="hidden border-r border-foreground/10 bg-secondary/60 p-4 @md/project:block">
+            <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
+              Views
+            </p>
+            <ul className="mt-5 space-y-3 text-xs">
+              <li className="border-l-2 border-accent pl-2.5">Priority</li>
+              <li className="border-l-2 border-transparent pl-2.5 text-muted-foreground">
+                Newsletters
+              </li>
+              <li className="border-l-2 border-transparent pl-2.5 text-muted-foreground">
+                Receipts
+              </li>
+            </ul>
+          </aside>
+          <div className="p-3 @md/project:p-5">
+            <p className="font-heading text-2xl">Triage queue</p>
+            <ul className="mt-3 border-t border-foreground/10 text-xs @md/project:mt-6">
+              {inboxExamples.map(({ category, action }) => (
+                <li
+                  key={category}
+                  className="flex justify-between gap-3 border-b border-foreground/10 py-1.5 @md/project:py-3.5"
+                >
+                  <span>{category}</span>
+                  <span className="text-muted-foreground">{action}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <div className="grid min-h-0 flex-1 grid-cols-[7.5rem_minmax(0,1fr)]">
-            <aside className="border-r border-foreground/10 bg-secondary/60 p-4">
-              <p className="font-mono text-micro tracking-label text-muted-foreground uppercase">
-                Views
-              </p>
-              <ul className="mt-5 space-y-3 text-xs">
-                <li className="border-l-2 border-accent pl-2.5">Priority</li>
-                <li className="border-l-2 border-transparent pl-2.5 text-muted-foreground">
-                  Newsletters
-                </li>
-                <li className="border-l-2 border-transparent pl-2.5 text-muted-foreground">
-                  Receipts
-                </li>
-              </ul>
-            </aside>
-
-            <div className="p-5">
-              <div className="flex items-center justify-between gap-4">
-                <p className="font-heading text-2xl">Triage queue</p>
-                <span className="font-mono text-micro text-accent uppercase">
-                  Live sync
-                </span>
-              </div>
-              <ul className="mt-6 border-t border-foreground/10 text-xs">
-                <li className="flex justify-between gap-3 border-b border-foreground/10 py-3.5">
-                  <span>Product updates</span>
-                  <span className="text-muted-foreground">Archive 24</span>
-                </li>
-                <li className="flex justify-between gap-3 border-b border-foreground/10 py-3.5">
-                  <span>Receipts</span>
-                  <span className="text-muted-foreground">Label 11</span>
-                </li>
-                <li className="flex justify-between gap-3 border-b border-foreground/10 py-3.5">
-                  <span>Needs reply</span>
-                  <span className="text-muted-foreground">Keep 06</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </figure>
-
-        <div className="flex flex-col gap-3">
-          <header className="flex items-baseline gap-3.5">
-            <span className="font-mono text-label tracking-emphasis text-accent">
-              03
-            </span>
-            <h3 className="text-3xl leading-none tracking-[-0.02em] md:text-[2.5rem]">
-              MailIQ
-            </h3>
-            <span aria-hidden="true" className="flex-1" />
-            <span className="font-mono text-xs text-muted-foreground">
-              Live ↗
-            </span>
-          </header>
-
-          <p className="max-w-[46ch] text-body-sm leading-[1.6] text-foreground/75">
-            Gmail made bulk-operable. Built on an API that fails often, so the
-            test layer is the product — Jest, Playwright, and MSW cover the
-            failure paths.
-          </p>
-
-          <p className="font-mono text-label text-muted-foreground">
-            Remix · Gmail API · Neon Postgres · Gemini
-          </p>
         </div>
-      </a>
-    </article>
+      </ProjectVisual>
+    </SupportingProject>
   );
 }

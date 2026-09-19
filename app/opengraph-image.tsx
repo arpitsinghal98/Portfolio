@@ -141,7 +141,7 @@ export default async function OpenGraphImage() {
               marginTop: 22,
             }}
           >
-            {siteConfig.role} · Backend &amp; AI Systems
+            {siteConfig.role}
           </span>
 
           <span

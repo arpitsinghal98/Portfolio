@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import { ExperienceDetail } from "@/components/experience/experience-detail";
-import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   education,
   experiences,
@@ -11,6 +18,10 @@ import {
   timelineStart,
   yearTicks,
 } from "@/data/experiences";
+
+const defaultExperienceId =
+  experiences.find((experience) => experience.current)?.id ?? experiences[0].id;
+const recentExperiences = experiences.toReversed();
 
 function timelinePosition(start: number, end: number) {
   const left = ((start - timelineStart) / timelineDuration) * 100;
@@ -30,173 +41,160 @@ function tickPosition(year: number) {
 }
 
 export function ExperienceTimeline() {
-  const [selectedId, setSelectedId] = useState("twinmind");
-  const selectedExperience =
-    experiences.find((experience) => experience.id === selectedId) ??
-    experiences[experiences.length - 1];
+  const [selectedId, setSelectedId] = useState<string | null>(
+    defaultExperienceId,
+  );
 
   return (
     <>
-      <div className="mt-10 hidden grid-cols-[7rem_minmax(0,1fr)] items-center gap-x-[1.125rem] gap-y-2 md:grid">
-        <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
-          Years
-        </p>
-        <div className="relative h-4 border-foreground/20 border-b">
-          {yearTicks.map((year) => (
-            <span
-              key={year}
-              className="absolute bottom-0 translate-x-[-50%] font-mono text-micro text-foreground/50"
-              style={{ left: tickPosition(year) }}
-            >
-              &apos;{String(year).slice(2)}
-            </span>
-          ))}
-        </div>
+      <Tabs
+        value={selectedId ?? defaultExperienceId}
+        onValueChange={(value: string | null) => setSelectedId(value)}
+        orientation="vertical"
+        className="hidden md:block"
+      >
+        <div className="mt-10 grid grid-cols-[7rem_minmax(0,1fr)] items-center gap-x-[1.125rem] gap-y-2">
+          <p className="font-mono text-micro tracking-label text-foreground/60 uppercase">
+            Years
+          </p>
+          <div className="relative h-4 border-foreground/20 border-b">
+            {yearTicks.map((year) => (
+              <span
+                key={year}
+                className="absolute bottom-0 translate-x-[-50%] font-mono text-micro text-foreground/60"
+                style={{ left: tickPosition(year) }}
+              >
+                &apos;{String(year).slice(2)}
+              </span>
+            ))}
+          </div>
 
-        <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/50 uppercase">
-          Select a role
-        </p>
-        <ol aria-label="Work experience timeline" className="space-y-1">
-          {experiences.map((experience) => {
-            const position = timelinePosition(experience.start, experience.end);
-            const isSelected = experience.id === selectedId;
+          <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/60 uppercase">
+            Select a role
+          </p>
+          <TabsList
+            aria-label="Work experience timeline"
+            variant="line"
+            className="h-auto w-full gap-1 rounded-none p-0"
+          >
+            {experiences.map((experience) => {
+              const position = timelinePosition(
+                experience.start,
+                experience.end,
+              );
 
-            return (
-              <li key={experience.id}>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  aria-label={`Show experience at ${experience.company}`}
-                  aria-controls="experience-detail-desktop"
-                  aria-pressed={isSelected}
-                  onClick={() => setSelectedId(experience.id)}
-                  className="relative h-8 w-full overflow-visible rounded-none p-0 hover:bg-transparent dark:hover:bg-transparent"
+              return (
+                <TabsTrigger
+                  key={experience.id}
+                  value={experience.id}
+                  aria-label={`${experience.company}, ${experience.role}, ${experience.dates}`}
+                  className="group/timeline-tab relative h-9 w-full flex-none overflow-visible rounded-none border-0 p-0 after:hidden"
                 >
                   <span
                     aria-hidden="true"
-                    className={
-                      isSelected
-                        ? "absolute inset-y-0 bg-accent/20 ring-1 ring-accent ring-inset"
-                        : "absolute inset-y-0 bg-foreground/15 transition-colors group-hover/button:bg-foreground/25"
-                    }
+                    className="absolute inset-y-0 bg-foreground/15 ring-1 ring-transparent ring-inset transition-colors group-hover/timeline-tab:bg-foreground/25 group-data-active/timeline-tab:bg-accent/20 group-data-active/timeline-tab:ring-accent"
                     style={position}
                   />
                   <span
-                    aria-hidden="true"
-                    className={
-                      isSelected
-                        ? "absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-accent"
-                        : "absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-foreground/70"
-                    }
+                    className="absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-foreground/70 group-data-active/timeline-tab:text-accent"
                     style={{ left: position.left }}
                   >
                     {experience.company}
                   </span>
-                </Button>
-              </li>
-            );
-          })}
-        </ol>
+                </TabsTrigger>
+              );
+            })}
+          </TabsList>
 
-        <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/50 uppercase">
-          Studied
-        </p>
-        <div className="relative h-8">
-          <span
-            aria-hidden="true"
-            className="absolute inset-y-0 border border-foreground/30 border-dashed bg-foreground/5"
-            style={timelinePosition(education.start, education.end)}
-          />
-          <span
-            className="absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-foreground/70"
-            style={{
-              left: timelinePosition(education.start, education.end).left,
-            }}
-          >
-            {education.institution}
-            <span className="sr-only">
-              , {education.degree}, {education.dates}
-            </span>
-          </span>
-        </div>
-      </div>
-
-      <div className="mt-8 md:hidden">
-        <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
-          Select a role
-        </p>
-        <ol className="mt-3 border-foreground/20 border-t">
-          {[...experiences].reverse().map((experience) => {
-            const isSelected = experience.id === selectedId;
-
-            return (
-              <li key={experience.id} className="border-foreground/20 border-b">
-                <Button
-                  type="button"
-                  variant="ghost"
-                  aria-controls={`experience-detail-${experience.id}`}
-                  aria-expanded={isSelected}
-                  aria-label={`${experience.company}, ${experience.role}, ${experience.dates}`}
-                  onClick={() => setSelectedId(experience.id)}
-                  className="h-auto w-full items-stretch justify-start rounded-none px-0 py-4 text-left whitespace-normal hover:bg-transparent dark:hover:bg-transparent"
-                >
-                  <span className="grid w-full gap-1">
-                    <span className="flex items-baseline justify-between gap-4">
-                      <span
-                        className={
-                          isSelected
-                            ? "font-heading text-2xl text-accent"
-                            : "font-heading text-2xl text-foreground"
-                        }
-                      >
-                        {experience.company}
-                      </span>
-                      <span className="font-mono text-micro text-foreground/55">
-                        {experience.dates}
-                      </span>
-                    </span>
-                    <span className="text-sm font-normal text-foreground/65">
-                      {experience.role}
-                    </span>
-                  </span>
-                </Button>
-                {isSelected ? (
-                  <div aria-live="polite">
-                    <ExperienceDetail
-                      experience={experience}
-                      id={`experience-detail-${experience.id}`}
-                      compact
-                    />
-                  </div>
-                ) : null}
-              </li>
-            );
-          })}
-        </ol>
-
-        <div className="mt-8">
-          <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
+          <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/60 uppercase">
             Studied
           </p>
-          <div className="mt-3 border border-foreground/30 border-dashed p-4">
-            <div className="flex items-baseline justify-between gap-4">
-              <h3 className="font-heading text-2xl">Illinois Tech</h3>
-              <span className="font-mono text-micro text-foreground/55">
-                {education.dates}
+          <div className="relative h-8">
+            <span
+              aria-hidden="true"
+              className="absolute inset-y-0 border border-foreground/30 border-dashed bg-foreground/5"
+              style={timelinePosition(education.start, education.end)}
+            />
+            <span
+              className="absolute inset-y-0 flex items-center px-2.5 font-mono text-label text-foreground/70"
+              style={{
+                left: timelinePosition(education.start, education.end).left,
+              }}
+            >
+              {education.institution}
+              <span className="sr-only">
+                , {education.degree}, {education.dates}
               </span>
-            </div>
-            <p className="mt-1 text-sm text-foreground/65">
-              {education.degree}
-            </p>
+            </span>
           </div>
         </div>
-      </div>
 
-      <div aria-live="polite" className="hidden md:block">
-        <ExperienceDetail
-          experience={selectedExperience}
-          id="experience-detail-desktop"
-        />
+        {experiences.map((experience) => (
+          <TabsContent key={experience.id} value={experience.id}>
+            <ExperienceDetail experience={experience} />
+          </TabsContent>
+        ))}
+      </Tabs>
+
+      <div className="mt-8 md:hidden">
+        <p className="font-mono text-micro tracking-label text-foreground/60 uppercase">
+          Explore each role
+        </p>
+        <Accordion
+          value={selectedId ? [selectedId] : []}
+          onValueChange={(value: string[]) => setSelectedId(value[0] ?? null)}
+          className="mt-3 border-foreground/20 border-t"
+        >
+          {recentExperiences.map((experience) => (
+            <AccordionItem
+              key={experience.id}
+              value={experience.id}
+              className="border-foreground/20 border-b"
+            >
+              <AccordionTrigger className="gap-3 rounded-none px-0 font-sans text-left hover:no-underline">
+                <span className="grid flex-1 gap-1">
+                  <span className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <span className="font-heading text-2xl text-foreground group-aria-expanded/accordion-trigger:text-accent">
+                      {experience.company}
+                    </span>
+                    <span className="font-mono text-micro text-foreground/60">
+                      {experience.dates}
+                    </span>
+                  </span>
+                  <span className="text-sm font-normal text-foreground/65">
+                    {experience.role}
+                  </span>
+                  <span className="mt-1 text-sm leading-6 font-normal text-foreground/80">
+                    {experience.outcome}
+                  </span>
+                </span>
+              </AccordionTrigger>
+              <AccordionContent>
+                <ExperienceDetail experience={experience} compact />
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <div className="mt-8">
+          <p className="font-mono text-micro tracking-label text-foreground/60 uppercase">
+            Studied
+          </p>
+          <Card
+            size="sm"
+            className="mt-3 rounded-none border border-foreground/30 border-dashed bg-transparent shadow-none ring-0"
+          >
+            <CardContent className="gap-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 className="font-heading text-2xl">Illinois Tech</h3>
+                <span className="font-mono text-micro text-foreground/60">
+                  {education.dates}
+                </span>
+              </div>
+              <p className="text-sm text-foreground/65">{education.degree}</p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </>
   );

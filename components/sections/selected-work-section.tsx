@@ -8,7 +8,7 @@ export function SelectedWorkSection() {
     <section
       id="work"
       aria-labelledby="selected-work-heading"
-      className="page-gutter scroll-mt-[4.5rem] bg-background pt-20 text-foreground sm:pt-24 lg:pt-[7.5rem]"
+      className="page-gutter bg-background pt-20 text-foreground sm:pt-24 lg:pt-[7.5rem]"
     >
       <div className="site-container">
         <header className="flex items-baseline gap-5 border-border border-b pb-2.5">

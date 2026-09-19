@@ -54,7 +54,7 @@ export function HalfLifeProject() {
           }
           variant="outline"
           size="sm"
-          className="mt-8 border-accent/45 bg-transparent font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+          className="mt-8 min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
         />
       </div>
 

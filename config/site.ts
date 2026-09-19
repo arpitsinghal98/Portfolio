@@ -15,11 +15,11 @@ export const siteUrl = resolveSiteUrl(configuredSiteUrl);
 
 export const siteConfig = {
   name: "Arpit Singhal",
-  role: "Software Engineer",
+  role: "Backend & AI Product Engineer",
   location: "SF Bay Area",
   availability: "Open to work",
   email: "arpitsinghal98@outlook.com",
-  title: "Arpit Singhal — Software Engineer",
+  title: "Arpit Singhal — Backend & AI Product Engineer",
   description:
     "Product-minded software engineer building backend systems, AI workflows, APIs, data infrastructure, and reliable products.",
   links: {

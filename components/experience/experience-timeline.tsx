@@ -37,7 +37,7 @@ export function ExperienceTimeline() {
 
   return (
     <>
-      <div className="mt-10 hidden grid-cols-[5.75rem_minmax(0,1fr)] items-center gap-x-[1.125rem] gap-y-2 md:grid">
+      <div className="mt-10 hidden grid-cols-[7rem_minmax(0,1fr)] items-center gap-x-[1.125rem] gap-y-2 md:grid">
         <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
           Years
         </p>
@@ -54,7 +54,7 @@ export function ExperienceTimeline() {
         </div>
 
         <p className="self-start pt-2 font-mono text-micro tracking-label text-foreground/50 uppercase">
-          Roles
+          Select a role
         </p>
         <ol aria-label="Work experience timeline" className="space-y-1">
           {experiences.map((experience) => {
@@ -123,7 +123,7 @@ export function ExperienceTimeline() {
 
       <div className="mt-8 md:hidden">
         <p className="font-mono text-micro tracking-label text-foreground/50 uppercase">
-          Roles
+          Select a role
         </p>
         <ol className="mt-3 border-foreground/20 border-t">
           {[...experiences].reverse().map((experience) => {

@@ -10,8 +10,8 @@
   --font-sans: var(--font-schibsted-grotesk);
   --font-serif: var(--font-instrument-serif);
   --container-site: 97.5rem;
-  --text-micro: 0.625rem;
-  --text-label: 0.6875rem;
+  --text-micro: 0.6875rem;
+  --text-label: 0.75rem;
   --text-body-sm: 0.9375rem;
   --tracking-compact: 0.1em;
   --tracking-label: 0.14em;

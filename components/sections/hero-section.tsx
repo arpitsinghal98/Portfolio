@@ -2,6 +2,11 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { createEmailHref, siteConfig } from "@/config/site";
 
+const professionalLinks = [
+  { label: "GitHub", href: siteConfig.links.github },
+  { label: "LinkedIn", href: siteConfig.links.linkedin },
+] as const;
+
 export function HeroSection() {
   return (
     <section
@@ -20,7 +25,7 @@ export function HeroSection() {
       <div className="site-container page-gutter relative flex min-h-svh flex-col">
         <header className="flex items-baseline justify-between gap-5 py-6 font-mono text-label tracking-wide uppercase">
           <span>{siteConfig.name}</span>
-          <span className="hidden text-foreground/80 sm:inline">
+          <span className="hidden text-foreground/80 md:inline">
             {siteConfig.role} · {siteConfig.location}
           </span>
           <span className="text-accent">{siteConfig.availability}</span>
@@ -42,24 +47,43 @@ export function HeroSection() {
               pharma platform that could not go down.
             </p>
 
-            <div className="flex items-center justify-between gap-6 sm:justify-end">
-              <span className="font-mono text-label tracking-emphasis text-foreground/70 uppercase">
+            <div className="flex items-center justify-end gap-6">
+              <span className="hidden font-mono text-label tracking-emphasis text-foreground/70 uppercase lg:inline">
                 Scroll ↓
               </span>
-              <Button
-                nativeButton={false}
-                render={
-                  <a
-                    href={createEmailHref()}
-                    aria-label={`Email ${siteConfig.name}`}
-                  >
-                    Email me
-                    <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
-                  </a>
-                }
-                size="lg"
-                className="bg-accent px-5 font-mono text-label tracking-label text-accent-foreground uppercase hover:bg-accent/90"
-              />
+              <nav
+                aria-label="Professional links"
+                className="flex min-w-0 items-center gap-1 sm:gap-3"
+              >
+                {professionalLinks.map((link) => (
+                  <Button
+                    key={link.label}
+                    nativeButton={false}
+                    render={
+                      <a href={link.href} target="_blank" rel="noreferrer">
+                        {link.label}
+                      </a>
+                    }
+                    variant="link"
+                    className="h-11 rounded-none px-1.5 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline sm:px-2"
+                  />
+                ))}
+
+                <Button
+                  nativeButton={false}
+                  render={
+                    <a
+                      href={createEmailHref()}
+                      aria-label={`Email ${siteConfig.name}`}
+                    >
+                      Email me
+                      <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
+                    </a>
+                  }
+                  size="lg"
+                  className="min-h-11 bg-accent px-4 font-mono text-label tracking-label text-accent-foreground uppercase hover:bg-accent/90 sm:px-5"
+                />
+              </nav>
             </div>
           </div>
         </div>

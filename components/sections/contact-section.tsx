@@ -56,7 +56,7 @@ export function ContactSection() {
               nativeButton={false}
               render={<a href={emailHref}>{siteConfig.email}</a>}
               variant="link"
-              className="h-auto rounded-none p-0 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline"
+              className="h-11 rounded-none px-0 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline"
             />
 
             {socialLinks.map((link) => (
@@ -70,7 +70,7 @@ export function ContactSection() {
                   </a>
                 }
                 variant="link"
-                className="h-auto rounded-none p-0 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline"
+                className="h-11 rounded-none px-0 font-mono text-label tracking-label text-foreground/75 uppercase hover:text-accent hover:no-underline"
               />
             ))}
           </nav>

@@ -1,6 +1,3 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { siteConfig } from "@/config/site";
-
 export function IntroductionSection() {
   return (
     <section
@@ -8,14 +5,9 @@ export function IntroductionSection() {
       className="page-gutter bg-background py-24 text-foreground lg:py-28"
     >
       <div className="site-container grid items-start gap-10 lg:grid-cols-[11.25rem_minmax(0,1fr)] lg:gap-14">
-        <Avatar
-          aria-label={siteConfig.name}
-          className="size-40 rounded-lg sm:size-44 lg:size-[11.25rem]"
-        >
-          <AvatarFallback className="rounded-lg bg-secondary font-heading text-5xl text-accent">
-            AS
-          </AvatarFallback>
-        </Avatar>
+        <p className="font-mono text-label tracking-wide text-muted-foreground uppercase">
+          How I work
+        </p>
 
         <div className="space-y-7">
           <h2

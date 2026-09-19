@@ -5,7 +5,7 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="page-gutter dark scroll-mt-[4.5rem] bg-card py-[6.875rem] text-foreground"
+      className="page-gutter dark scroll-mt-[4.5rem] bg-card py-20 text-foreground sm:py-24 lg:py-[6.875rem]"
     >
       <div className="site-container">
         <header className="flex items-baseline gap-5">

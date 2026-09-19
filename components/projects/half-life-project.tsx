@@ -1,6 +1,82 @@
 import { ArrowUpRight } from "lucide-react";
+import { ProjectCaseStudy } from "@/components/projects/project-case-study";
 import { Button } from "@/components/ui/button";
 import { createEmailHref } from "@/config/site";
+
+function HalfLifeDecision() {
+  return (
+    <div className="border-border border-t pt-5">
+      <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
+        Design decision
+      </p>
+      <p className="mt-4 font-heading text-3xl leading-[1.05]">
+        LLM for judgment.
+        <br />
+        Code for arithmetic.
+      </p>
+    </div>
+  );
+}
+
+function MobileHalfLifeCaseStudy() {
+  return (
+    <div>
+      <HalfLifeDecision />
+
+      <ol className="mt-8 border-border border-t">
+        <li className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-border border-b py-4">
+          <span className="font-mono text-label text-accent">01</span>
+          <span className="text-sm">Describe the work week</span>
+          <span className="font-mono text-micro text-muted-foreground uppercase">
+            Input
+          </span>
+        </li>
+        <li className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-border border-b py-4">
+          <span className="font-mono text-label text-accent">02</span>
+          <span className="text-sm">Decompose into 12–22 tasks</span>
+          <span className="font-mono text-micro text-muted-foreground uppercase">
+            Claude
+          </span>
+        </li>
+        <li className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-border border-b py-4">
+          <span className="font-mono text-label text-accent">03</span>
+          <span className="text-sm">Score six qualitative axes</span>
+          <span className="font-mono text-micro text-muted-foreground uppercase">
+            Streaming
+          </span>
+        </li>
+      </ol>
+
+      <div className="mt-8 rounded-2xl bg-card p-6 text-card-foreground">
+        <p className="font-mono text-label tracking-label text-accent uppercase">
+          System boundary
+        </p>
+        <p className="mt-4 font-heading text-3xl leading-tight">
+          Judgment is flexible. The math is not.
+        </p>
+      </div>
+
+      <p className="mt-6 text-sm leading-7 text-muted-foreground">
+        The scoring boundary makes every result easier to inspect: disagreements
+        trace back to a specific qualitative axis, while the calculation remains
+        deterministic.
+      </p>
+
+      <Button
+        nativeButton={false}
+        render={
+          <a href={createEmailHref("Half-Life walkthrough")}>
+            Request walkthrough
+            <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
+          </a>
+        }
+        variant="outline"
+        size="sm"
+        className="mt-6 min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+      />
+    </div>
+  );
+}
 
 export function HalfLifeProject() {
   return (
@@ -23,15 +99,8 @@ export function HalfLifeProject() {
           level, then turns the result into a practical handoff plan.
         </p>
 
-        <div className="mt-10 border-t border-border pt-5">
-          <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
-            Design decision
-          </p>
-          <p className="mt-4 font-heading text-3xl leading-[1.05]">
-            LLM for judgment.
-            <br />
-            Code for arithmetic.
-          </p>
+        <div className="mt-10 hidden lg:block">
+          <HalfLifeDecision />
         </div>
 
         <ul
@@ -54,11 +123,15 @@ export function HalfLifeProject() {
           }
           variant="outline"
           size="sm"
-          className="mt-8 min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+          className="mt-8 hidden min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground lg:inline-flex"
         />
+
+        <ProjectCaseStudy>
+          <MobileHalfLifeCaseStudy />
+        </ProjectCaseStudy>
       </div>
 
-      <div>
+      <div className="hidden lg:block">
         <div className="dark flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-card text-foreground lg:h-[36rem]">
           <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4 sm:px-7">
             <p className="font-mono text-label tracking-emphasis uppercase">

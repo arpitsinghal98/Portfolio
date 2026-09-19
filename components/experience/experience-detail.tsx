@@ -1,10 +1,47 @@
 import type { Experience } from "@/data/experiences";
+import { cn } from "@/lib/utils";
 
-export function ExperienceDetail({ experience }: { experience: Experience }) {
+type ExperienceDetailProps = {
+  experience: Experience;
+  id: string;
+  compact?: boolean;
+};
+
+export function ExperienceDetail({
+  experience,
+  id,
+  compact = false,
+}: ExperienceDetailProps) {
+  if (compact) {
+    return (
+      <article id={id} className="border-accent border-l-2 pb-6 pl-4">
+        <p className="text-sm leading-6 text-foreground/80">
+          {experience.summary}
+        </p>
+        <ul className="mt-4 grid gap-3">
+          {experience.highlights.map((highlight) => (
+            <li
+              key={highlight}
+              className="border-foreground/15 border-t pt-3 text-sm leading-6 text-foreground/65"
+            >
+              <span aria-hidden="true" className="mr-2 text-accent">
+                ↳
+              </span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      </article>
+    );
+  }
+
   return (
     <article
-      id="experience-detail"
-      className="mt-10 grid gap-8 border-foreground/20 border-t pt-7 lg:grid-cols-[minmax(14rem,0.65fr)_minmax(0,1.35fr)] lg:gap-16"
+      id={id}
+      className={cn(
+        "mt-10 grid gap-8 border-foreground/20 border-t pt-7",
+        "lg:grid-cols-[minmax(14rem,0.65fr)_minmax(0,1.35fr)] lg:gap-16",
+      )}
     >
       <header>
         <p className="font-mono text-label tracking-label text-accent uppercase">

@@ -1,14 +1,14 @@
 export function WhisprProject() {
   return (
-    <article>
+    <article className="border-border border-b md:border-0">
       <a
         href="https://whispr-beta.vercel.app"
         target="_blank"
         rel="noreferrer"
         aria-label="Open the Whispr live project"
-        className="group flex flex-col gap-5"
+        className="group flex flex-col gap-5 py-7 md:py-0"
       >
-        <figure className="dark flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-white/10 bg-card text-foreground transition-colors group-hover:border-accent/40 md:aspect-3/2 md:min-h-0">
+        <figure className="dark hidden min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-white/10 bg-card text-foreground transition-colors group-hover:border-accent/40 md:flex md:aspect-3/2 md:min-h-0">
           <figcaption className="sr-only">
             Whispr — live transcript + memory bank
           </figcaption>
@@ -71,7 +71,7 @@ export function WhisprProject() {
             <span className="font-mono text-label tracking-emphasis text-accent">
               04
             </span>
-            <h3 className="text-[2.5rem] leading-none tracking-[-0.02em]">
+            <h3 className="text-3xl leading-none tracking-[-0.02em] md:text-[2.5rem]">
               Whispr
             </h3>
             <span aria-hidden="true" className="flex-1" />

@@ -1,6 +1,75 @@
 import { ArrowUpRight } from "lucide-react";
+import { ProjectCaseStudy } from "@/components/projects/project-case-study";
 import { Button } from "@/components/ui/button";
 import { createEmailHref } from "@/config/site";
+
+function PaperTrailDecision() {
+  return (
+    <div className="border-border border-t pt-5">
+      <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
+        Design decision
+      </p>
+      <p className="mt-4 font-heading text-3xl leading-[1.05]">
+        Retrieval should make every answer traceable.
+      </p>
+    </div>
+  );
+}
+
+function MobilePaperTrailCaseStudy() {
+  return (
+    <div>
+      <PaperTrailDecision />
+
+      <div className="mt-8 rounded-2xl border border-foreground/10 bg-popover p-6">
+        <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
+          Research question
+        </p>
+        <p className="mt-4 font-heading text-3xl leading-tight">
+          How do the selected sources differ in methodology?
+        </p>
+
+        <p className="mt-8 font-mono text-label tracking-label text-muted-foreground uppercase">
+          Sources
+        </p>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          <li className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-micro uppercase">
+            PubMed
+          </li>
+          <li className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-micro uppercase">
+            arXiv
+          </li>
+          <li className="rounded-full border border-foreground/15 px-3 py-1.5 font-mono text-micro uppercase">
+            Documents
+          </li>
+        </ul>
+
+        <p className="mt-8 border-foreground/10 border-t pt-5 font-mono text-micro leading-5 tracking-compact text-muted-foreground uppercase">
+          Parse → chunk → embed / index → hybrid retrieve → generate → cite
+        </p>
+      </div>
+
+      <p className="mt-6 text-sm leading-7 text-muted-foreground">
+        A single deployment handles ingestion and background jobs, with a
+        containerized architecture that can move from Docker Compose to
+        Kubernetes.
+      </p>
+
+      <Button
+        nativeButton={false}
+        render={
+          <a href={createEmailHref("PaperTrail walkthrough")}>
+            Request walkthrough
+            <ArrowUpRight aria-hidden="true" data-icon="inline-end" />
+          </a>
+        }
+        variant="outline"
+        size="sm"
+        className="mt-6 min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+      />
+    </div>
+  );
+}
 
 export function PaperTrailProject() {
   return (
@@ -23,13 +92,8 @@ export function PaperTrailProject() {
           documents to stream grounded answers with citations.
         </p>
 
-        <div className="mt-10 border-t border-border pt-5">
-          <p className="font-mono text-label tracking-label text-muted-foreground uppercase">
-            Design decision
-          </p>
-          <p className="mt-4 font-heading text-3xl leading-[1.05]">
-            Retrieval should make every answer traceable.
-          </p>
+        <div className="mt-10 hidden lg:block">
+          <PaperTrailDecision />
         </div>
 
         <ul
@@ -52,11 +116,15 @@ export function PaperTrailProject() {
           }
           variant="outline"
           size="sm"
-          className="mt-8 min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground"
+          className="mt-8 hidden min-h-11 border-accent/45 bg-transparent px-3 font-mono text-label tracking-compact text-accent uppercase hover:bg-accent hover:text-accent-foreground lg:inline-flex"
         />
+
+        <ProjectCaseStudy>
+          <MobilePaperTrailCaseStudy />
+        </ProjectCaseStudy>
       </div>
 
-      <div>
+      <div className="hidden lg:block">
         <div className="flex flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-popover lg:h-[36rem]">
           <div className="flex shrink-0 items-center justify-between border-b border-foreground/10 px-5 py-4 sm:px-7">
             <p className="font-mono text-label tracking-emphasis uppercase">

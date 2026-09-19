@@ -1,14 +1,14 @@
 export function MailIqProject() {
   return (
-    <article>
+    <article className="border-border border-b md:border-0">
       <a
         href="https://mail-iq-jump.vercel.app"
         target="_blank"
         rel="noreferrer"
         aria-label="Open the MailIQ live project"
-        className="group flex flex-col gap-5"
+        className="group flex flex-col gap-5 py-7 md:py-0"
       >
-        <figure className="flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-popover transition-colors group-hover:border-accent/35 md:aspect-3/2 md:min-h-0">
+        <figure className="hidden min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-popover transition-colors group-hover:border-accent/35 md:flex md:aspect-3/2 md:min-h-0">
           <figcaption className="sr-only">
             MailIQ — three-panel inbox
           </figcaption>
@@ -68,7 +68,7 @@ export function MailIqProject() {
             <span className="font-mono text-label tracking-emphasis text-accent">
               03
             </span>
-            <h3 className="text-[2.5rem] leading-none tracking-[-0.02em]">
+            <h3 className="text-3xl leading-none tracking-[-0.02em] md:text-[2.5rem]">
               MailIQ
             </h3>
             <span aria-hidden="true" className="flex-1" />

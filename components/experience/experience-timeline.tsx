@@ -67,7 +67,7 @@ export function ExperienceTimeline() {
                   type="button"
                   variant="ghost"
                   aria-label={`Show experience at ${experience.company}`}
-                  aria-controls="experience-detail"
+                  aria-controls="experience-detail-desktop"
                   aria-pressed={isSelected}
                   onClick={() => setSelectedId(experience.id)}
                   className="relative h-8 w-full overflow-visible rounded-none p-0 hover:bg-transparent dark:hover:bg-transparent"
@@ -134,8 +134,9 @@ export function ExperienceTimeline() {
                 <Button
                   type="button"
                   variant="ghost"
-                  aria-controls="experience-detail"
-                  aria-pressed={isSelected}
+                  aria-controls={`experience-detail-${experience.id}`}
+                  aria-expanded={isSelected}
+                  aria-label={`${experience.company}, ${experience.role}, ${experience.dates}`}
                   onClick={() => setSelectedId(experience.id)}
                   className="h-auto w-full items-stretch justify-start rounded-none px-0 py-4 text-left whitespace-normal hover:bg-transparent dark:hover:bg-transparent"
                 >
@@ -159,6 +160,15 @@ export function ExperienceTimeline() {
                     </span>
                   </span>
                 </Button>
+                {isSelected ? (
+                  <div aria-live="polite">
+                    <ExperienceDetail
+                      experience={experience}
+                      id={`experience-detail-${experience.id}`}
+                      compact
+                    />
+                  </div>
+                ) : null}
               </li>
             );
           })}
@@ -182,8 +192,11 @@ export function ExperienceTimeline() {
         </div>
       </div>
 
-      <div aria-live="polite">
-        <ExperienceDetail experience={selectedExperience} />
+      <div aria-live="polite" className="hidden md:block">
+        <ExperienceDetail
+          experience={selectedExperience}
+          id="experience-detail-desktop"
+        />
       </div>
     </>
   );

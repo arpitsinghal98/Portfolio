@@ -8,7 +8,7 @@ export function SelectedWorkSection() {
     <section
       id="work"
       aria-labelledby="selected-work-heading"
-      className="page-gutter scroll-mt-[4.5rem] bg-background pt-[7.5rem] text-foreground"
+      className="page-gutter scroll-mt-[4.5rem] bg-background pt-20 text-foreground sm:pt-24 lg:pt-[7.5rem]"
     >
       <div className="site-container">
         <header className="flex items-baseline gap-5 border-border border-b pb-2.5">
@@ -24,12 +24,26 @@ export function SelectedWorkSection() {
           </p>
         </header>
 
-        <div className="mt-[3.75rem] space-y-28 sm:space-y-36">
-          <HalfLifeProject />
-          <PaperTrailProject />
+        <div className="mt-10 lg:mt-[3.75rem] lg:space-y-36">
+          <div className="border-border border-b pb-12 lg:border-0 lg:pb-0">
+            <HalfLifeProject />
+          </div>
+          <div className="pt-12 lg:pt-0">
+            <PaperTrailProject />
+          </div>
         </div>
 
-        <div className="grid gap-10 pt-28 pb-[7.5rem] sm:pt-36 md:grid-cols-2">
+        <div className="mt-20 flex items-baseline gap-5 border-border border-b pb-2.5 sm:mt-24 lg:mt-36">
+          <p className="font-mono text-label tracking-wide text-muted-foreground uppercase">
+            More projects
+          </p>
+          <span aria-hidden="true" className="flex-1" />
+          <p className="font-mono text-label tracking-wide text-muted-foreground uppercase">
+            03 — 04
+          </p>
+        </div>
+
+        <div className="grid pb-20 sm:pb-24 md:grid-cols-2 md:gap-10 md:pt-10 lg:pb-[7.5rem]">
           <MailIqProject />
           <WhisprProject />
         </div>

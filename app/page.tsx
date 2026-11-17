@@ -5,17 +5,21 @@ import { IntroductionSection } from "@/components/sections/introduction-section"
 import { MetricsSection } from "@/components/sections/metrics-section";
 import { ProfileDetailsSection } from "@/components/sections/profile-details-section";
 import { SelectedWorkSection } from "@/components/sections/selected-work-section";
+import { SiteHeader } from "@/components/site-header";
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection />
-      <IntroductionSection />
-      <MetricsSection />
-      <ExperienceSection />
-      <SelectedWorkSection />
-      <ProfileDetailsSection />
-      <ContactSection />
-    </main>
+    <div className="bg-(--dark-background)">
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <IntroductionSection />
+        <MetricsSection />
+        <ExperienceSection />
+        <SelectedWorkSection />
+        <ProfileDetailsSection />
+        <ContactSection />
+      </main>
+    </div>
   );
 }

@@ -58,6 +58,7 @@
 
 :root {
   --background: #f0eee6;
+  --dark-background: #100f0c;
   --foreground: #141310;
   --card: #f0eee6;
   --card-foreground: #141310;
@@ -82,6 +83,7 @@
   --chart-5: #d5d0c1;
   --radius: 0.5rem;
   --page-gutter: 1.25rem;
+  --site-header-offset: 4rem;
   --sidebar: #e6e3d8;
   --sidebar-foreground: #141310;
   --sidebar-primary: #141310;
@@ -95,11 +97,12 @@
 @media (width >= 40rem) {
   :root {
     --page-gutter: 2rem;
+    --site-header-offset: 8rem;
   }
 }
 
 .dark {
-  --background: #100f0c;
+  --background: var(--dark-background);
   --foreground: #f0eee6;
   --card: #141310;
   --card-foreground: #f0eee6;
@@ -139,6 +142,7 @@
   html {
     @apply bg-background font-sans;
     color-scheme: light;
+    scroll-padding-top: var(--site-header-offset);
   }
   body {
     @apply min-h-svh bg-background text-foreground antialiased;

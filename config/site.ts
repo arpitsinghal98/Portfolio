@@ -1,17 +1,4 @@
-const configuredSiteUrl =
-  process.env.SITE_URL ?? process.env.VERCEL_PROJECT_PRODUCTION_URL;
-
-function resolveSiteUrl(value?: string) {
-  if (!value) {
-    return "http://localhost:3000";
-  }
-
-  const url = value.startsWith("http") ? value : `https://${value}`;
-
-  return url.replace(/\/+$/, "");
-}
-
-export const siteUrl = resolveSiteUrl(configuredSiteUrl);
+export const siteUrl = "https://www.arpitsinghal.dev";
 
 export const siteConfig = {
   name: "Arpit Singhal",

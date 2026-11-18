@@ -39,7 +39,7 @@ bun run check
 
 ## Deployment URL
 
-Vercel deployments use `VERCEL_PROJECT_PRODUCTION_URL` automatically. For another host, set `SITE_URL` to the production origin so canonical metadata, robots, and the sitemap use the correct URL.
+The canonical production origin is `https://www.arpitsinghal.dev`, configured in `config/site.ts`. Metadata, robots, and the sitemap all use this origin, including on preview deployments.
 
 ## Content and assets
 
